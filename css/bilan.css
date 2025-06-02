@@ -1,0 +1,181 @@
+/* --- STYLES SPÉCIFIQUES POUR LA PAGE BILAN --- */
+
+#bilan-main h2 {
+    color: #0056b3; /* Bleu institutionnel */
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#bilan-main h2:first-child {
+    margin-top: 0;
+}
+
+/* Tableau des scores */
+#table-scores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+#table-scores th,
+#table-scores td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+#table-scores thead th {
+    background-color: #e9ecef; /* Fond gris clair pour l'en-tête */
+    color: #495057;
+    font-weight: 600;
+}
+
+#table-scores tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Lignes alternées */
+}
+#table-scores tbody tr:hover {
+    background-color: #e2e6ea;
+}
+
+#table-scores td:nth-child(2), /* Score obtenu */
+#table-scores td:nth-child(3), /* Score Max */
+#table-scores td:nth-child(4) { /* Pourcentage */
+    text-align: center;
+    font-weight: 500;
+}
+
+#table-scores td:nth-child(5) { /* Statut */
+    text-align: center;
+    font-style: italic;
+}
+
+/* Ligne Total */
+#total-row th,
+#total-row td {
+    background-color: #d1ecf1; /* Fond cyan clair pour total */
+    color: #0c5460;
+    font-weight: bold;
+    border-top: 2px solid #adb5bd;
+}
+#total-row td:nth-child(2),
+#total-row td:nth-child(3),
+#total-row td:nth-child(4),
+#total-row td:nth-child(5) {
+    text-align: center;
+}
+
+
+#no-scores-message {
+    padding: 15px;
+    background-color: #fff3cd; /* Jaune d'avertissement */
+    border: 1px solid #ffeeba;
+    color: #856404;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Analyse Globale */
+#analyse-globale {
+    margin-top: 30px;
+}
+
+#points-forts,
+#axes-amelioration,
+#conseils-generaux {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#analyse-globale h3 {
+    margin-top: 0;
+    color: #0056b3;
+    font-size: 1.2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+#liste-points-forts li,
+#liste-axes-amelioration li,
+#conseils-generaux ul li {
+    margin-bottom: 8px;
+    list-style-position: inside; /* Pour aligner les puces avec le texte */
+}
+#conseils-generaux ul {
+    padding-left: 20px; /* Indentation pour la liste de conseils */
+}
+
+#liste-points-forts li::before {
+    content: "✅ "; /* Peut aussi être géré par JS ou classe emoji */
+    color: green;
+    margin-right: 5px;
+}
+#liste-axes-amelioration li a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 500;
+}
+#liste-axes-amelioration li a:hover {
+    text-decoration: underline;
+}
+#liste-axes-amelioration li::before {
+    content: "➡️ "; /* Peut aussi être géré par JS ou classe emoji */
+    color: #007bff;
+    margin-right: 5px;
+}
+
+
+/* Actions Bilan */
+.bilan-actions {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.bilan-actions a,
+.bilan-actions button {
+    margin: 0 10px;
+}
+
+.btn-retour-accueil {
+    background-color: #6c757d; /* Gris */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+.btn-retour-accueil:hover {
+    background-color: #5a6268;
+}
+
+.btn-reset {
+    background-color: #dc3545; /* Rouge */
+    color: white;
+     /* Styles hérités de button dans style.css (padding, border-radius, etc.) */
+}
+.btn-reset:hover {
+    background-color: #c82333;
+}
+
+/* Responsivité */
+@media (max-width: 600px) {
+    #table-scores {
+        font-size: 0.85em;
+    }
+    #table-scores th,
+    #table-scores td {
+        padding: 6px 8px;
+    }
+    .bilan-actions a,
+    .bilan-actions button {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+}

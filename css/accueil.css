@@ -1,0 +1,198 @@
+/* --- STYLES SPÉCIFIQUES POUR accueil.html --- */
+
+body {
+    /* Le style global du body est dans style.css */
+}
+
+.splash-container {
+    height: 85vh; /* Hauteur de la section principale de la splash page */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Empêche le contenu de déborder */
+}
+
+.splash-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Correction : Utiliser la propriété background-image avec url() */
+    background-image: url('../images/dae_background_modern.png'); /* Assurez-vous que l'extension .jpg (ou .png, .webp etc.) est correcte ET que le chemin est bon */
+    /* Suggestion d'image : DAE stylisé, électrodes, ou un fond technologique abstrait et épuré */
+    background-size: cover;       /* Pour que l'image couvre toute la zone, quitte à être rognée */
+    background-position: center center; /* Pour centrer l'image */
+    z-index: 1;                   /* Pour s'assurer qu'elle est en arrière-plan */
+}
+
+.splash-overlay { /* Optionnel: pour assombrir l'image de fond et améliorer la lisibilité du texte */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 30, 80, 0.5); /* Bleu foncé semi-transparent */
+    z-index: 2;
+}
+
+.splash-content {
+    position: relative; /* Pour être au-dessus de l'overlay */
+    z-index: 3;
+    padding: 20px 30px;
+    max-width: 800px;
+    animation: fadeInContent 1.2s ease-out forwards;
+    background-color: rgba(0, 0, 0, 0.15); /* Léger fond pour le texte si besoin */
+    border-radius: 10px;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.splash-title {
+    font-size: 2.8em; /* Ajuster selon la police */
+    margin-bottom: 0.4em;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    color: #ffffff; /* Assurer contraste */
+}
+
+.splash-subtitle {
+    font-size: 1.3em;
+    margin-bottom: 2em;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f0f8ff; /* Blanc cassé pour contraste */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.splash-button {
+    display: inline-block;
+    padding: 14px 35px;
+    font-size: 1.15em;
+    color: white;
+    background-color: #007bff; /* Bleu primaire des boutons du site */
+    border: none;
+    border-radius: 50px; /* Bouton plus arrondi/moderne */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.splash-button:hover {
+    background-color: #0056b3; /* Plus foncé */
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+}
+
+/* Section de texte d'introduction sous la splash */
+.accueil-main-content {
+    padding-top: 0; /* Enlever le padding du main global pour cette page si splash prend tout */
+    max-width: 100%; /* Permettre aux sections de prendre toute la largeur si besoin */
+    margin-top: 0; /* Coller la section suivante à la splash */
+}
+
+.intro-text-section {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fond blanc pour cette section */
+    text-align: center;
+}
+
+.intro-text-section .container,
+.benefits-section .container { /* Pour centrer le contenu textuel */
+    max-width: 900px; /* Largeur du main des autres pages */
+    margin: 0 auto;
+}
+
+.intro-text-section h2 {
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+.intro-text-section p {
+    font-size: 1.1em;
+    color: #454545;
+    line-height: 1.7;
+}
+
+/* Section des bénéfices */
+.benefits-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8; /* Fond légèrement différent */
+    text-align: center;
+}
+.benefits-section h2 {
+    color: #0056b3;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.benefit-item {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.benefit-icon-img {
+    width: 60px; /* Taille des icônes */
+    height: 60px;
+    margin-bottom: 20px;
+    /* Ajouter un filtre si les icônes sont monochromes et que vous voulez les colorer en CSS */
+    /* filter: invert(27%) sepia(90%) saturate(2500%) hue-rotate(200deg) brightness(90%) contrast(100%); Bleu */
+}
+.benefit-item h3 {
+    color: #004085; /* Bleu foncé pour les titres des bénéfices */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.benefit-item p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsivité pour accueil.css */
+@media (max-width: 960px) {
+    .splash-title { font-size: 2.4em; }
+    .splash-subtitle { font-size: 1.1em; }
+    .benefits-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .splash-container { height: auto; min-height: 70vh; padding: 60px 0; }
+    .splash-title { font-size: 2em; }
+    .splash-subtitle { font-size: 1em; max-width: 90%; }
+    .splash-button { padding: 12px 28px; font-size: 1em; }
+    .intro-text-section, .benefits-section { padding: 40px 15px; }
+    .intro-text-section h2, .benefits-section h2 { font-size: 1.8em; }
+    .benefits-grid { grid-template-columns: 1fr; /* Une colonne sur mobile */ }
+    .benefit-item { padding: 25px 20px; }
+}
+
+@media (max-width: 480px) {
+    .splash-container { min-height: 60vh; }
+    .splash-title { font-size: 1.8em; }
+    .splash-subtitle { font-size: 0.9em; }
+    .benefit-item h3 { font-size: 1.2em; }
+    .benefit-item p { font-size: 0.9em; }
+}

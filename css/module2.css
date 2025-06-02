@@ -1,0 +1,444 @@
+/* --- Réinitialisation & Styles de Base --- */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+/* --- Header --- */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+header h2 {
+    margin: 5px 0 0 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #e0e0e0;
+}
+/* --- Contenu Principal --- */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ddd;
+    background-color: #e9ecef;
+}
+/* --- Styles Communs aux Modules --- */
+.hidden {
+    display: none;
+}
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+button:disabled {
+    background-color: #b0c4de;
+    color: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+.feedback {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+.feedback.correct {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-color: #badbcc;
+}
+.feedback.incorrect {
+    background-color: #f8d7da;
+    color: #842029;
+    border-color: #f5c2c7;
+}
+.emoji-correct { color: green; margin-right: 5px; font-size: 1.1em; vertical-align: middle; }
+.emoji-incorrect { color: red; margin-right: 5px; font-size: 1.1em; vertical-align: middle; }
+
+/* --- Section Introduction Spécifique Module --- */
+#introduction {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+#introduction h2 {
+     color: #0056b3;
+     margin-bottom: 15px;
+     text-align: center;
+}
+#introduction p {
+    color: #444;
+    margin-bottom: 20px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+}
+/* --- Styles Image unique Intro Module --- */
+.intro-image-single {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 25px auto;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.intro-image-single img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 auto 15px auto;
+    border: 1px solid #eee;
+}
+.intro-image-single figcaption {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+}
+
+#start-exercises {
+    font-size: 1.1em;
+    padding: 12px 25px;
+    background-color: #28a745;
+    margin-top: 15px;
+}
+#start-exercises:hover {
+     background-color: #218838;
+}
+
+/* --- Section Exercice Spécifique Module --- */
+.exercise-section {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+.exercise-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #495057;
+    font-size: 1.4em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+.exercise-section p {
+    margin-bottom: 15px;
+}
+
+/* --- Styles Exercice 1 (QCM Multiple - Module 2) --- */
+#qcm-form-1 label {
+    display: block;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#qcm-form-1 label:hover {
+    background-color: #e9ecef;
+}
+#qcm-form-1 input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Conteneurs pour les boutons des exercices */
+.button-container-ex1,
+.button-container-ex2 {
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+    align-items: center; /* Alignement vertical */
+    margin-top: 20px; /* Marge au-dessus du conteneur */
+}
+.button-container-ex1 button,
+.button-container-ex2 button {
+    margin-top: 0; /* Annule la marge top individuelle des boutons dans ces conteneurs */
+}
+
+
+/* --- Styles Exercice 2 (Associer Communication - Module 2) --- */
+#matching-comm-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.comm-list {
+    border: 1px dashed #adb5bd;
+    padding: 20px;
+    min-height: 150px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    background-color: #f1f3f5;
+    border-radius: 5px;
+}
+.comm-list p:first-child {
+    margin-top: 0;
+    font-weight: 600;
+    text-align: center;
+    color: #495057;
+    margin-bottom: 20px;
+}
+.comm-dropzones {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 15px;
+}
+.dropzone-comm {
+    border: 2px dashed #17a2b8; 
+    padding: 15px;
+    min-height: 80px;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.dropzone-comm p:first-child {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #0c5460;
+}
+.dropzone-comm.over {
+    background-color: #bde0fe;
+    border-color: #0d6efd;
+}
+.draggable-comm {
+    background-color: #ffffff;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    margin-bottom: 10px;
+    cursor: grab;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.draggable-comm:active {
+    cursor: grabbing;
+}
+.draggable-comm.dragging {
+    opacity: 0.6;
+}
+
+
+/* --- Styles Exercice 3 (Texte à trous - Module 2) --- */
+.word-bank {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #495057;
+}
+.word-bank strong {
+    color: #343a40;
+}
+#fill-in-blanks-form p {
+    line-height: 2;
+}
+#fill-in-blanks-form input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #007bff;
+    padding: 4px 6px;
+    font-size: 1em;
+    font-family: inherit;
+    margin: 0 5px;
+    width: 100px;
+    text-align: center;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+#fill-in-blanks-form input[type="text"]:focus {
+    outline: none;
+    background-color: #e9f7ff;
+}
+#fill-in-blanks-form input[type="text"].correct-answer {
+    border-bottom: 2px solid green;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+#fill-in-blanks-form input[type="text"].incorrect-answer {
+    border-bottom: 2px solid red;
+     background-color: #f8d7da;
+     color: #842029;
+}
+
+/* --- Styles Leçon --- */
+#micro-cours {
+    background-color: #fdfdfe;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-top: 25px;
+    color: #333;
+}
+#micro-cours h2 {
+     margin-top: 0;
+     margin-bottom: 20px;
+     color: #004085;
+     font-size: 1.5em;
+     border-bottom: 2px solid #b8daff;
+     padding-bottom: 8px;
+}
+#micro-cours strong {
+    color: #0056b3;
+}
+#micro-cours ul {
+    margin-left: 20px;
+    list-style: disc;
+    margin-bottom: 15px;
+}
+#micro-cours ul ul { 
+     list-style: circle;
+     margin-top: 5px;
+     margin-bottom: 10px;
+}
+#micro-cours li {
+    margin-bottom: 8px;
+}
+
+/* --- Styles Résultats Module --- */
+#module-results {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+#module-results p {
+    font-size: 1.15em;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+#module-results span {
+    font-weight: bold;
+}
+#show-lesson-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+#show-lesson-btn:hover {
+    background-color: #e0a800;
+}
+
+/* --- Styles Navigation Module --- */
+.module-nav {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+.module-nav a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+    margin: 5px 10px; 
+}
+.module-nav a:hover {
+    background-color: #5a6268;
+}
+
+/* --- Responsivité --- */
+@media (max-width: 960px) {
+    main {
+        max-width: 95%;
+        padding: 20px;
+    }
+     header h1 { font-size: 1.6em; }
+     header h2 { font-size: 1em; }
+}
+@media (max-width: 768px) {
+    header h1 { font-size: 1.5em; }
+     header h2 { font-size: 0.95em; }
+    main { padding: 15px; margin-top: 20px; margin-bottom: 20px; }
+    button { padding: 8px 15px; font-size: 0.95em; }
+    .exercise-section h2 { font-size: 1.3em; }
+    #micro-cours h2 { font-size: 1.3em; }
+    #matching-comm-container { flex-direction: column; gap: 15px; }
+    .comm-list, .comm-dropzones { flex-basis: auto; width: 100%; }
+    .comm-dropzones { flex-direction: column; gap: 15px; }
+    .dropzone-comm, .comm-list { min-height: 150px; padding: 15px; }
+    .draggable-comm { padding: 8px 10px; }
+    .intro-image { width: 90%; max-width: none; min-width: 0; flex: none; }
+     #fill-in-blanks-form input[type="text"] { width: 80px; }
+    
+    .button-container-ex1,
+    .button-container-ex2 {
+        flex-direction: column; /* Empile les boutons sur petit écran */
+        align-items: stretch; /* Les boutons prennent toute la largeur */
+    }
+    .button-container-ex1 button,
+    .button-container-ex2 button {
+        width: 100%;
+        margin-bottom: 10px; /* Espace entre les boutons empilés */
+    }
+    .button-container-ex1 button:last-child,
+    .button-container-ex2 button:last-child {
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 480px) {
+    header h1 { font-size: 1.3em; }
+     header h2 { font-size: 0.9em; }
+    main { padding: 10px; border-radius: 0; margin-top: 15px; margin-bottom: 15px; }
+    .exercise-section { padding: 15px; }
+    #micro-cours { padding: 15px; }
+    #module-results { padding: 15px; }
+    #module-results p { font-size: 1em; }
+    .module-nav a { padding: 8px 15px; font-size: 0.9em; margin-bottom: 10px; display: block; width: 80%; margin-left: auto; margin-right: auto; }
+    .intro-image-single { width: 100%; padding: 10px; }
+    .dropzone-comm { min-height: 60px; padding: 10px; }
+    .draggable-comm { padding: 8px 10px; }
+     #fill-in-blanks-form input[type="text"] { width: 70px; font-size: 0.9em; }
+}

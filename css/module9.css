@@ -1,0 +1,120 @@
+/* --- STYLES SPÉCIFIQUES MODULE 9 : Tests & Validation --- */
+
+/* Ex1: QCM (utilise styles QCM globaux via #qcm-test-1 si appliqué) */
+#qcm-test-1 label { /* Hérite de #qcm-form-1 label dans style.css */ }
+#qcm-test-1 input[type="radio"] { /* Hérite de #qcm-form-1 input dans style.css */ }
+
+
+/* Ex2: Associer Type de Test / Vérification */
+#matching-test-type-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.test-type-list { /* Similaire à .comm-list */
+    border: 1px dashed #6f42c1; /* Violet pour tests/validation */
+    padding: 20px;
+    min-height: 150px;
+    flex-basis: 350px;
+    flex-grow: 1;
+    background-color: #f3e8fd; /* Fond violet pâle */
+    border-radius: 5px;
+}
+.test-type-list p:first-child {
+    margin-top: 0;
+    font-weight: 600;
+    text-align: center;
+    color: #492b70; /* Violet foncé */
+    margin-bottom: 20px;
+}
+.test-verification-dropzones { /* Conteneur des zones de dépôt vérifications */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 15px;
+}
+.dropzone-test { /* Zone dépôt pour une vérification */
+    border: 2px dashed #8a63d2; /* Violet moyen */
+    padding: 15px;
+    min-height: 70px;
+    background-color: #e9d8fd; /* Fond violet plus clair */
+    border-radius: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.dropzone-test p:first-child { /* Texte de la vérification */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #3d225d; /* Violet très foncé */
+}
+.dropzone-test.over {
+    background-color: #d1b3ff; /* Violet plus soutenu */
+    border-color: #492b70;
+}
+.draggable-test { /* Type de test à glisser */
+    background-color: #ffffff;
+    padding: 10px 12px;
+    border: 1px solid #d3c0f0; /* Bordure violette légère */
+    margin-bottom: 10px;
+    cursor: grab;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    font-size: 0.95em;
+}
+.draggable-test:active { cursor: grabbing; }
+.draggable-test.dragging { opacity: 0.6; }
+/* Styles correction Ex2 Mod9 */
+.draggable-test.correct { border: 2px solid green !important; }
+.draggable-test.incorrect { border: 2px solid darkred !important; }
+
+
+/* Ex3: Ordonnancement Protocole de Test */
+#protocol-step-container { /* Similaire à #algo-ranking-container */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f3f5;
+    max-width: 600px; /* Limiter largeur */
+    margin: 20px auto;
+}
+ #protocol-step-list {
+     list-style: decimal;
+     padding-left: 30px;
+     margin: 0;
+ }
+  #protocol-step-list li {
+      background-color: white;
+      border: 1px solid #fd7e14; /* Orange pour protocole/étapes */
+      color: #b35900;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      cursor: grab;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-weight: 500;
+  }
+    #protocol-step-list li.dragging {
+       opacity: 0.6;
+       background-color: #ffe8cc; /* Orange clair pendant drag */
+   }
+   /* Styles de correction pour les LI */
+   #protocol-step-list li.correct-step { border-color: green; background-color: #d1e7dd; color: #0f5132;}
+   #protocol-step-list li.incorrect-step { border-color: red; background-color: #f8d7da; color: #721c24;}
+
+
+/* --- Responsivité spécifique au Module 9 --- */
+@media (max-width: 768px) {
+    #matching-test-type-container { flex-direction: column; }
+    .test-type-list { flex-basis: auto; width: 100%; }
+    .test-verification-dropzones { width: 100%; }
+    .dropzone-test { min-height: auto; }
+    #protocol-step-container { max-width: 95%; }
+    #protocol-step-list li { font-size: 0.95em; padding: 8px 10px;}
+}
+@media (max-width: 480px) {
+    .draggable-test { font-size: 0.9em; padding: 8px 10px; }
+    .dropzone-test p:first-child { font-size: 0.9em;}
+    #protocol-step-list li { font-size: 0.9em; }
+}

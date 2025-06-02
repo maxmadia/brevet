@@ -1,0 +1,161 @@
+/* --- Réinitialisation & Styles de Base --- */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Fond global */
+    color: #333;
+}
+/* --- Header --- */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header h1 { margin: 0; font-size: 1.8em; font-weight: 600; }
+header h2 { margin: 5px 0 0 0; font-size: 1.1em; font-weight: 400; color: #e0e0e0; }
+/* --- Contenu Principal --- */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ddd;
+    background-color: #e9ecef;
+}
+/* --- Styles Communs aux Modules --- */
+.hidden { display: none; }
+button { display: inline-block; padding: 10px 20px; font-size: 1em; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px; transition: background-color 0.2s ease-in-out, transform 0.1s ease; }
+button:hover { background-color: #0056b3; transform: translateY(-1px); }
+button:disabled { background-color: #b0c4de; color: #666; cursor: not-allowed; transform: none; }
+.feedback { margin-top: 15px; padding: 12px; border-radius: 5px; font-weight: 500; border: 1px solid transparent; }
+.feedback.correct { background-color: #d1e7dd; color: #0f5132; border-color: #badbcc; }
+.feedback.incorrect { background-color: #f8d7da; color: #842029; border-color: #f5c2c7; }
+.emoji-correct { color: green; margin-right: 5px; font-size: 1.1em; vertical-align: middle; }
+.emoji-incorrect { color: red; margin-right: 5px; font-size: 1.1em; vertical-align: middle; }
+
+/* --- Section Introduction --- */
+#introduction { margin-bottom: 30px; padding-bottom: 25px; border-bottom: 1px solid #eee; }
+#introduction h2 { color: #0056b3; margin-bottom: 15px; text-align: center; }
+#introduction p { color: #444; margin-bottom: 20px; max-width: 750px; margin-left: auto; margin-right: auto; text-align: center; }
+.intro-image-single { border: 1px solid #ddd; border-radius: 8px; padding: 15px; background-color: #f8f9fa; text-align: center; margin: 25px auto; max-width: 500px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.intro-image-single img { display: block; max-width: 100%; height: auto; border-radius: 4px; margin: 0 auto 15px auto; border: 1px solid #eee; }
+.intro-image-single figcaption { font-size: 0.9em; color: #555; line-height: 1.4; }
+#start-exercises { font-size: 1.1em; padding: 12px 25px; background-color: #28a745; margin-top: 15px; }
+#start-exercises:hover { background-color: #218838; }
+
+/* --- Section Exercice --- */
+.exercise-section { background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 25px; margin-bottom: 25px; border-radius: 8px; }
+.exercise-section h2 { margin-top: 0; margin-bottom: 20px; color: #495057; font-size: 1.4em; border-bottom: 2px solid #007bff; padding-bottom: 5px; }
+.exercise-section p { margin-bottom: 15px; }
+
+/* --- STYLES SPÉCIFIQUES MODULE 5 --- */
+
+/* Ex1: Drag & Drop sur Schéma Info */
+#chaine-info-schema-container { position: relative; max-width: 600px; margin: 20px auto; user-select: none; }
+#chaine-info-schema-container img { display: block; width: 100%; height: auto; }
+ .drop-zone-info { position: absolute; border: 2px dashed #007bff; background-color: rgba(0, 123, 255, 0.08); min-width: 80px; min-height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center; padding: 3px; transition: background-color 0.2s; text-align: center; font-size: 0.8em; color: #0056b3; font-weight: bold; overflow: hidden; }
+  .drop-zone-info.over { background-color: rgba(0, 123, 255, 0.2); border-style: solid; }
+ /* Positionnement pour 3 zones (à ajuster !) */
+ #drop-acquerir { top: 98%; left: 3%; width: 28%; height: 20%; }
+ #drop-traiter { top: 98%; left: 36%; width: 28%; height: 20%; }
+ #drop-communiquer { top: 98%; left: 69%; width: 28%; height: 20%; }
+ #etiquettes-info-container { margin-top: 20px; padding: 15px; border: 1px dashed #ccc; background-color: #f1f3f5; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; min-height: 50px; }
+.etiquette-info { background-color: #fff; padding: 8px 12px; border: 1px solid #b8b8b8; border-radius: 4px; cursor: grab; box-shadow: 0 1px 2px rgba(0,0,0,0.05); font-size: 0.9em; white-space: nowrap; }
+ .etiquette-info.dragging { opacity: 0.5; }
+ .etiquette-info.correct { border: 2px solid green !important; background-color: #d1e7dd !important; } /* Added !important for stronger override if needed */
+ .etiquette-info.incorrect { border: 2px solid red !important; background-color: #f8d7da !important; } /* Added !important for stronger override if needed */
+
+
+/* Ex2: Associer Composant/Fonction Info */
+#matching-comp-info-container { display: flex; gap: 25px; flex-wrap: wrap; }
+/* Utilisation de classes génériques si définies ailleurs ou spécifiques ici */
+.comm-list { /* Zone source des composants */ border: 1px dashed #adb5bd; padding: 20px; min-height: 150px; flex-basis: 300px; flex-grow: 1; background-color: #f1f3f5; border-radius: 5px; }
+.comm-list p:first-child { margin-top: 0; font-weight: 600; text-align: center; color: #495057; margin-bottom: 20px; }
+.comm-dropzones { /* Conteneur des zones de fonctions */ display: flex; flex-direction: column; flex-grow: 2; gap: 15px; }
+
+.dropzone-comp-info { /* Zone dépôt pour une fonction */ border: 2px dashed #0d6efd; padding: 15px; min-height: 60px; background-color: #e7f3ff; border-radius: 5px; transition: background-color 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+.dropzone-comp-info p:first-child { margin-top: 0; margin-bottom: 10px; font-weight: 500; color: #0a58ca; }
+.dropzone-comp-info.over { background-color: #cfe2ff; border-color: #0a58ca; }
+
+.draggable-comp-info { /* Composant à glisser */ background-color: #ffffff; padding: 10px 12px; border: 1px solid #ced4da; margin-bottom: 10px; cursor: grab; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.draggable-comp-info:active { cursor: grabbing; }
+.draggable-comp-info.dragging { opacity: 0.6; }
+.draggable-comp-info.correct { border: 2px solid green !important; background-color: #d1e7dd !important; } /* Added !important */
+.draggable-comp-info.incorrect { border: 2px solid red !important; background-color: #f8d7da !important; } /* Added !important */
+
+
+/* Ex3: QCM Nature Info */
+#qcm-info-form p { font-weight: 500; margin-top: 20px; margin-bottom: 8px; color: #333;}
+#qcm-info-form label { display: block; margin-bottom: 12px; padding: 8px 12px; background-color: #fff; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: background-color 0.2s; }
+#qcm-info-form label:hover { background-color: #e9ecef; }
+#qcm-info-form input[type="radio"] { margin-right: 8px; vertical-align: middle; }
+/* Styles pour la correction des QCM (ajoutés par JS) */
+#qcm-info-form label.correct-answer { background-color: #d1e7dd !important; font-weight: bold; }
+#qcm-info-form label.incorrect-answer { background-color: #f8d7da !important; }
+
+
+/* --- Styles Leçon --- */
+#micro-cours { background-color: #fdfdfe; padding: 25px; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 25px; color: #333; }
+#micro-cours h2 { margin-top: 0; margin-bottom: 20px; color: #004085; font-size: 1.5em; border-bottom: 2px solid #b8daff; padding-bottom: 8px; }
+#micro-cours strong { color: #0056b3; }
+#micro-cours ul { margin-left: 20px; list-style: disc; margin-bottom: 15px; padding-left: 1em; }
+#micro-cours ul ul { list-style: circle; margin-top: 5px; margin-bottom: 10px; padding-left: 1em; }
+#micro-cours li { margin-bottom: 8px; }
+#micro-cours ol { margin-left: 20px; list-style-position: outside; padding-left: 1.5em; }
+
+/* --- Styles Résultats Module --- */
+#module-results { background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; padding: 20px; margin-top: 30px; border-radius: 5px; text-align: center; }
+#module-results p { font-size: 1.15em; margin-bottom: 15px; font-weight: 500; }
+#module-results span { font-weight: bold; }
+#show-lesson-btn { background-color: #ffc107; color: #333; }
+#show-lesson-btn:hover { background-color: #e0a800; }
+
+/* --- Styles Navigation Module --- */
+.module-nav { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; }
+.module-nav a { display: inline-block; padding: 10px 25px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.2s ease-in-out; margin: 5px 10px; }
+.module-nav a:hover { background-color: #5a6268; }
+
+/* --- Responsivité --- */
+@media (max-width: 960px) { main { max-width: 95%; padding: 20px; } header h1 { font-size: 1.6em; } header h2 { font-size: 1em; } }
+@media (max-width: 768px) { header h1 { font-size: 1.5em; } header h2 { font-size: 0.95em; } main { padding: 15px; margin-top: 20px; margin-bottom: 20px; } button { padding: 8px 15px; font-size: 0.95em; } .exercise-section h2 { font-size: 1.3em; } #micro-cours h2 { font-size: 1.3em; }
+    /* D&D Containers en colonne */
+    #matching-comp-info-container { flex-direction: column; gap: 15px; }
+    .comm-list { flex-basis: auto; width: 100%; } /* Source prend toute largeur */
+    .comm-dropzones { width: 100%; } /* Conteneur cibles aussi */
+    .dropzone-comp-info { min-height: auto; padding: 15px; } /* Hauteur auto pour D&D Assoc */
+    .draggable-comp-info { padding: 8px 10px; }
+    /* D&D Schéma */
+    .drop-zone-info { font-size: 0.7em; min-width: 60px; min-height: 30px; }
+    /* Intro */
+    .intro-image-single { width: 90%; }
+}
+@media (max-width: 480px) { header h1 { font-size: 1.3em; } header h2 { font-size: 0.9em; } main { padding: 10px; border-radius: 0; margin-top: 15px; margin-bottom: 15px; } .exercise-section { padding: 15px; } #micro-cours { padding: 15px; } #module-results { padding: 15px; } #module-results p { font-size: 1em; }
+    /* Nav en colonne */
+    .module-nav a { padding: 8px 15px; font-size: 0.9em; margin-bottom: 10px; display: block; width: 80%; margin-left: auto; margin-right: auto; }
+    /* Intro */
+    .intro-image-single { width: 100%; padding: 10px; }
+    /* D&D Schéma */
+    .drop-zone-info { min-width: 45px; min-height: 25px; padding: 1px; font-size: 0.65em; width: 30%; }
+    #drop-acquerir { left: 2%; } #drop-traiter { left: 35%; } #drop-communiquer { left: 68%; }
+    .etiquette-info { padding: 6px 8px; font-size: 0.75em; }
+    /* D&D Assoc */
+    .dropzone-comp-info { padding: 10px; }
+    .draggable-comp-info { padding: 8px 10px; }
+}

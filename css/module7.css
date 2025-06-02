@@ -1,0 +1,85 @@
+/* --- STYLES SPÉCIFIQUES MODULE 7 : Algorithme & Programmation --- */
+
+/* Ex1: Ordonnancement Algorithme */
+#algo-ranking-container {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f3f5;
+    max-width: 500px; /* Limiter largeur */
+    margin: 20px auto;
+}
+ #algo-step-list {
+     list-style: decimal; /* Numérotation pour l'ordre */
+     padding-left: 30px; /* Espace pour les numéros */
+     margin: 0;
+ }
+  #algo-step-list li {
+      background-color: white;
+      border: 1px solid #007bff; /* Bordure bleue pour algo */
+      color: #0056b3; /* Texte bleu */
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      cursor: grab;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-weight: 500;
+  }
+   /* Pas de poignée spécifique ici, on déplace le LI entier */
+    #algo-step-list li.dragging {
+       opacity: 0.6;
+       background-color: #cfe2ff; /* Bleu clair pendant drag */
+   }
+   /* Styles de correction pour les LI */
+   #algo-step-list li.correct-step { border-color: green; background-color: #d1e7dd; color: #0f5132;}
+   #algo-step-list li.incorrect-step { border-color: red; background-color: #f8d7da; color: #721c24;}
+
+
+/* Ex2: Conditions (QCM) */
+.condition-statement {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #007bff; /* Bleu pour algo/conditions */
+    background-color: #e7f3ff; /* Fond bleu très pâle */
+    border-radius: 0 4px 4px 0;
+}
+.condition-statement p:first-child { /* La question/condition */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #003366;
+}
+/* Les labels et radios utilisent les styles QCM globaux */
+#conditions-form label { margin-bottom: 8px; }
+
+
+/* Ex3: Blocs Programmation */
+.code-block-image {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    max-width: 450px; /* Ajuster à la taille de votre image */
+    text-align: center;
+    border-radius: 4px;
+}
+.code-block-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* QCM pour Ex3 utilise les styles QCM globaux */
+#qcm-code-form label { margin-bottom: 8px; }
+
+
+/* --- Responsivité spécifique au Module 7 --- */
+@media (max-width: 768px) {
+    #algo-ranking-container { max-width: 95%; }
+    #algo-step-list li { font-size: 0.95em; padding: 8px 10px;}
+    .condition-statement { padding: 12px; }
+}
+@media (max-width: 480px) {
+    #algo-step-list li { font-size: 0.9em; }
+    .condition-statement p:first-child { font-size: 0.95em; }
+    .code-block-image { max-width: 100%; }
+}

@@ -1,0 +1,180 @@
+/* --- Réinitialisation & Styles de Base --- */
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f0f4f8; color: #333; }
+/* --- Header --- */
+header { background-color: #0056b3; color: white; padding: 15px 0; text-align: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+header h1 { margin: 0; font-size: 1.8em; font-weight: 600; }
+header h2 { margin: 5px 0 0 0; font-size: 1.1em; font-weight: 400; color: #e0e0e0; }
+/* --- Contenu Principal --- */
+main { max-width: 900px; margin: 30px auto; padding: 25px 30px; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+/* --- Footer --- */
+footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 0.9em; color: #555; border-top: 1px solid #ddd; background-color: #e9ecef; }
+/* --- Styles Communs aux Modules --- */
+.hidden { display: none !important; }
+button { display: inline-block; padding: 10px 20px; font-size: 1em; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px; transition: background-color 0.2s ease-in-out, transform 0.1s ease; }
+button:hover { background-color: #0056b3; transform: translateY(-1px); }
+button:disabled { background-color: #b0c4de; color: #666; cursor: not-allowed; transform: none; }
+.feedback { margin-top: 15px; padding: 12px; border-radius: 5px; font-weight: 500; border: 1px solid transparent; }
+.feedback.correct { background-color: #d1e7dd; color: #0f5132; border-color: #badbcc; }
+.feedback.incorrect { background-color: #f8d7da; color: #842029; border-color: #f5c2c7; }
+.emoji-correct { color: green; margin-right: 5px; font-size: 1.1em; vertical-align: middle; }
+.emoji-incorrect { color: red; margin-right: 5px; font-size: 1.1em; vertical-align: middle; }
+
+/* --- Section Introduction Spécifique Module --- */
+#introduction { margin-bottom: 30px; padding-bottom: 25px; border-bottom: 1px solid #eee; }
+#introduction h2 { color: #0056b3; margin-bottom: 15px; text-align: center; }
+#introduction p { color: #444; margin-bottom: 20px; max-width: 750px; margin-left: auto; margin-right: auto; text-align: justify; }
+.intro-image-single { border: 1px solid #ddd; border-radius: 8px; padding: 15px; background-color: #f8f9fa; text-align: center; margin: 25px auto; max-width: 500px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.intro-image-single img { display: block; max-width: 100%; height: auto; border-radius: 4px; margin: 0 auto 15px auto; border: 1px solid #eee; }
+.intro-image-single figcaption { font-size: 0.9em; color: #555; line-height: 1.4; }
+#intro-video-container { max-width: 700px; margin: 30px auto; padding: 15px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 4px; margin-bottom: 15px; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+#intro-video-container figcaption { font-size: 0.95em; color: #555; line-height: 1.5; text-align: center; }
+#start-exercises { font-size: 1.1em; padding: 12px 25px; background-color: #28a745; margin-top: 15px; }
+#start-exercises:hover { background-color: #218838; }
+
+/* --- Section Exercice Spécifique Module --- */
+.exercise-section { background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 25px; margin-bottom: 25px; border-radius: 8px; }
+.exercise-section h2 { margin-top: 0; margin-bottom: 20px; color: #495057; font-size: 1.4em; border-bottom: 2px solid #007bff; padding-bottom: 5px; }
+.exercise-section p { margin-bottom: 15px; }
+
+/* --- Styles Exercice QCM --- */
+#qcm-form-1 label, #true-false-form label, #qcm-info-form label { display: block; margin-bottom: 12px; padding: 8px 12px; background-color: #fff; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: background-color 0.2s; }
+#qcm-form-1 label:hover, #true-false-form label:hover, #qcm-info-form label:hover { background-color: #e9ecef; }
+#qcm-form-1 input[type="radio"], #qcm-form-1 input[type="checkbox"], #true-false-form input[type="radio"], #qcm-info-form input[type="radio"] { margin-right: 8px; vertical-align: middle; }
+#qcm-info-form p { font-weight: 500; margin-top: 20px; margin-bottom: 8px; color: #333;}
+
+/* --- Styles Exercice Tableau (Module 3) --- */
+.criteria-table { width: 100%; margin-top: 15px; border-collapse: collapse; text-align: left; font-size: 0.95em; }
+.criteria-table th, .criteria-table td { border: 1px solid #ddd; padding: 8px 10px; vertical-align: middle; }
+.criteria-table thead { background-color: #e9ecef; font-weight: bold; color: #495057; }
+.criteria-table tbody tr:nth-child(odd) { background-color: #f8f9fa; }
+.criteria-table td label { cursor: pointer; display: block; margin: 5px 0; padding: 5px; border: none; background-color: transparent; transition: background-color 0.1s ease; border-radius: 3px; }
+.criteria-table td label:hover { background-color: #e9f7ff; color: #0056b3; }
+.criteria-table input[type="radio"] { margin-right: 5px; vertical-align: middle; cursor: pointer; float: left; margin-top: 3px; }
+
+/* --- Styles Exercice Ordonnancement (Module 3) --- */
+#ranking-container { padding: 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f1f3f5; }
+#ranking-list { list-style: none; padding: 0; margin: 0; }
+#ranking-list li { background-color: white; border: 1px solid #ddd; padding: 12px 15px; margin-bottom: 8px; border-radius: 4px; cursor: grab; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+#ranking-list li .rank-handle { font-weight: bold; margin-right: 15px; color: #aaa; cursor: grab; font-size: 1.2em; }
+#ranking-list li .rank-text { flex-grow: 1; }
+#ranking-list li.dragging { opacity: 0.5; background-color: #e9ecef; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+/* --- STYLES MODULE 4 --- */
+/* Ex1: Drag & Drop sur Schéma Énergie */
+#chaine-energie-schema-container { position: relative; max-width: 700px; margin: 20px auto; user-select: none; }
+#chaine-energie-schema-container img { display: block; width: 100%; height: auto; }
+.drop-zone-energie { 
+    position: absolute; 
+    border: 2px dashed #ffa500; 
+    background-color: rgba(255, 165, 0, 0.1); 
+    min-width: 60px; 
+    min-height: 35px; 
+    border-radius: 5px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 3px; 
+    transition: background-color 0.2s; 
+    text-align: center; 
+    font-size: 0.8em; 
+    color: #cc8400; 
+    font-weight: bold; 
+    overflow: hidden; 
+}
+.drop-zone-energie.over { background-color: rgba(255, 165, 0, 0.3); border-style: solid; }
+.drop-zone-energie.correct-text-fallback { color: green; font-weight: bold; border-color: green; }
+
+/* ATTENTION: Les valeurs top/left/width/height suivantes sont des EXEMPLES. */
+/* Elles DOIVENT être ajustées précisément à VOTRE image '../images/chaine.png' */
+#drop-alim    { top: 45%; left:  2%; width: 17%; height: 18%; transform: translateY(-50%); }
+#drop-stock   { top: 45%; left: 21%; width: 17%; height: 18%; transform: translateY(-50%); }
+#drop-distrib { top: 45%; left: 40%; width: 17%; height: 18%; transform: translateY(-50%); }
+#drop-convert { top: 45%; left: 59%; width: 17%; height: 18%; transform: translateY(-50%); }
+#drop-deliver { top: 45%; left: 78%; width: 17%; height: 18%; transform: translateY(-50%); }
+
+#etiquettes-energie-container { margin-top: 20px; padding: 15px; border: 1px dashed #ccc; background-color: #f1f3f5; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; min-height: 50px; }
+.etiquette-energie { background-color: #fff; padding: 8px 12px; border: 1px solid #b8b8b8; border-radius: 4px; cursor: grab; box-shadow: 0 1px 2px rgba(0,0,0,0.05); font-size: 0.9em; white-space: nowrap; }
+.etiquette-energie.dragging { opacity: 0.5; }
+.etiquette-energie.correct { border: 2px solid green !important; background-color: #d1e7dd !important; color: #0f5132 !important; }
+.etiquette-energie.incorrect { border: 2px solid red !important; background-color: #f8d7da !important; color: #842029 !important;}
+
+/* Ex2: Associer Composant/Fonction Énergie */
+#matching-comp-container { display: flex; gap: 25px; flex-wrap: wrap; }
+.comp-list { border: 1px dashed #adb5bd; padding: 20px; min-height: 150px; flex-basis: 300px; flex-grow: 1; background-color: #f1f3f5; border-radius: 5px; }
+.comp-list p:first-child { margin-top: 0; font-weight: 600; text-align: center; color: #495057; margin-bottom: 20px; }
+.comp-dropzones { display: flex; flex-direction: column; flex-grow: 2; gap: 15px; }
+.dropzone-comp { border: 2px dashed #ff7f0e; padding: 15px; min-height: 60px; background-color: #fff3e0; border-radius: 5px; transition: background-color 0.2s, border-color 0.2s; display: flex; flex-direction: column; align-items: center; }
+.dropzone-comp p:first-child { margin-top: 0; margin-bottom: 10px; font-weight: 500; color: #e65100; text-align: center; width: 100%;}
+.dropzone-comp.over { background-color: #ffe0b2; border-color: #e65100; }
+.draggable-comp { background-color: #ffffff; padding: 10px 12px; border: 1px solid #ced4da; margin-bottom: 10px; cursor: grab; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.draggable-comp:active { cursor: grabbing; }
+.draggable-comp.dragging { opacity: 0.6; }
+.draggable-comp.correct { border: 2px solid green !important; background-color: #d1e7dd !important; }
+.draggable-comp.incorrect { border: 2px solid red !important; background-color: #f8d7da !important; }
+
+
+/* Ex3: Tableau Formes Énergie */
+.energy-form-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.energy-form-table th, .energy-form-table td { border: 1px solid #ddd; padding: 8px 10px; text-align: center; vertical-align: middle; }
+.energy-form-table thead { background-color: #e9ecef; font-weight: bold; color: #495057;}
+.energy-form-table select { padding: 6px 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 0.95em; cursor: pointer; min-width: 150px; }
+.energy-form-table select:disabled { background-color: #eee; cursor: not-allowed; opacity: 0.7; }
+.energy-form-table select.correct-answer { border: 2px solid green !important; background-color: #d1e7dd !important; font-weight: bold; color: #0f5132 !important; }
+.energy-form-table select.incorrect-answer { border: 2px solid red !important; background-color: #f8d7da !important; color: #842029 !important; }
+
+
+/* --- Styles Leçon --- */
+#micro-cours { background-color: #fdfdfe; padding: 25px; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 25px; color: #333; }
+#micro-cours h2 { margin-top: 0; margin-bottom: 20px; color: #004085; font-size: 1.5em; border-bottom: 2px solid #b8daff; padding-bottom: 8px; }
+#micro-cours strong { color: #0056b3; }
+#micro-cours ul { margin-left: 0; list-style: disc; margin-bottom: 15px; padding-left: 20px; } 
+#micro-cours ul ul { list-style: circle; margin-top: 5px; margin-bottom: 10px; padding-left: 20px; } 
+#micro-cours li { margin-bottom: 8px; }
+#micro-cours ol { margin-left: 0; list-style-position: outside; padding-left: 25px; }
+
+/* --- Styles Résultats Module --- */
+#module-results { background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; padding: 20px; margin-top: 30px; border-radius: 5px; text-align: center; }
+#module-results p { font-size: 1.15em; margin-bottom: 15px; font-weight: 500; }
+#module-results span { font-weight: bold; }
+#show-lesson-btn { background-color: #ffc107; color: #333; }
+#show-lesson-btn:hover { background-color: #e0a800; }
+
+/* --- Styles Navigation Module --- */
+.module-nav { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; }
+.module-nav a { display: inline-block; padding: 10px 25px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.2s ease-in-out; margin: 5px 10px; }
+.module-nav a:hover { background-color: #5a6268; }
+
+/* --- STYLES SPÉCIFIQUES PAGE D'ACCUEIL (index.html) --- */
+#index-main { text-align: center; }
+#intro-text { margin-bottom: 30px; font-size: 1.1em; color: #444; max-width: 750px; margin-left: auto; margin-right: auto; }
+#index-main h2 { color: #0056b3; margin-top: 40px; margin-bottom: 25px; }
+#module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; padding: 0 10px; text-align: left; }
+.module-card { background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
+.module-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+.module-card h3 { margin-top: 0; margin-bottom: 10px; color: #0056b3; font-size: 1.2em; }
+.module-card p { font-size: 0.95em; color: #555; flex-grow: 1; margin-bottom: 15px; }
+.module-card .start-module-btn { display: inline-block; padding: 8px 15px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none; margin-top: auto; align-self: center; transition: background-color 0.2s ease; }
+.module-card .start-module-btn:hover { background-color: #0056b3; }
+#bilan-link-container { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; }
+#bilan-link { display: inline-block; padding: 12px 30px; font-size: 1.1em; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.2s ease; }
+#bilan-link:hover { background-color: #5a6268; }
+
+/* --- Responsivité --- */
+@media (max-width: 960px) { main { max-width: 95%; padding: 20px; } header h1 { font-size: 1.6em; } header h2 { font-size: 1em; } }
+@media (max-width: 768px) { header h1 { font-size: 1.5em; } header h2 { font-size: 0.95em; } main { padding: 15px; margin-top: 20px; margin-bottom: 20px; } button { padding: 8px 15px; font-size: 0.95em; } .exercise-section h2 { font-size: 1.3em; } #micro-cours h2 { font-size: 1.3em; } #matching-container, #matching-comm-container, #matching-comp-container, #matching-comp-info-container { flex-direction: column; gap: 15px; } .match-list, .comm-list, .comp-list, .match-columns { flex-basis: auto; width: 100%; } .match-columns, .comm-dropzones, .comp-dropzones { flex-direction: column; gap: 15px; } .dropzone, .match-list, .dropzone-comm, .comm-list, .dropzone-comp, .comp-list, .dropzone-comp-info { min-height: 100px; padding: 15px; } .draggable, .draggable-comm, .draggable-comp, .draggable-comp-info { padding: 8px 10px; } .image-comparison-container { flex-direction: column; align-items: center; } .intro-image { width: 90%; max-width: none; min-width: 0; flex: none; } #intro-video-container { max-width: 95%; } .intro-image-single { width: 90%; } #fill-in-blanks-form input[type="text"] { width: 80px; } .criteria-table { font-size: 0.9em; } .criteria-table th, .criteria-table td { padding: 6px 8px; } #ranking-list li { padding: 8px 12px; } .drop-zone-energie { font-size: 0.7em; min-width: 50px; min-height: 30px;} .energy-form-table { font-size: 0.9em; } .drop-zone-info { font-size: 0.7em; min-width: 60px; min-height: 30px; } }
+@media (max-width: 480px) { header h1 { font-size: 1.3em; } header h2 { font-size: 0.9em; } main { padding: 10px; border-radius: 0; margin-top: 15px; margin-bottom: 15px; } .exercise-section { padding: 15px; } #micro-cours { padding: 15px; } #module-results { padding: 15px; } #module-results p { font-size: 1em; } .module-nav a { padding: 8px 15px; font-size: 0.9em; margin-bottom: 10px; display: block; width: 80%; margin-left: auto; margin-right: auto; } #module-grid { grid-template-columns: 1fr; gap: 15px; padding: 0 5px; } .module-card { padding: 15px; } #bilan-link { padding: 10px 20px; font-size: 1em; width: 80%; } #intro-text { font-size: 1em; } #intro-video-container { max-width: 100%; padding: 10px; } .intro-image-single { width: 100%; padding: 10px; } .dropzone-comm, .dropzone-comp, .dropzone-comp-info { min-height: 60px; padding: 10px; } .draggable-comm, .draggable-comp, .draggable-comp-info { padding: 8px 10px; } #fill-in-blanks-form input[type="text"] { width: 70px; font-size: 0.9em; } .criteria-table { font-size: 0.85em; } .criteria-table th, .criteria-table td { padding: 5px; } #ranking-list li { padding: 6px 10px; } #ranking-list li .rank-handle { margin-right: 8px; font-size: 1.1em;} 
+.drop-zone-energie { min-width: 45px; min-height: 28px; padding: 1px; font-size: 0.65em; width: 18%; } 
+#drop-alim    { left: 1%; } 
+#drop-stock   { left: 20%; } 
+#drop-distrib { left: 39%; } 
+#drop-convert { left: 58%; } 
+#drop-deliver { left: 77%; width: 20%;} 
+.etiquette-energie { padding: 5px 7px; font-size: 0.7em;} 
+.energy-form-table { font-size: 0.8em; } .energy-form-table select { padding: 4px; min-width: 90px;} 
+.drop-zone-info { min-width: 50px; min-height: 25px; padding: 2px; font-size: 0.7em; width: 30%; } 
+#drop-acquerir { left: 2%; } #drop-traiter { left: 35%; } #drop-communiquer { left: 68%; } 
+.etiquette-info { padding: 6px 8px; font-size: 0.75em; } 
+}

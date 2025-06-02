@@ -1,0 +1,81 @@
+/* --- STYLES SPÉCIFIQUES MODULE 10 : Coder pour le DAE --- */
+
+/* Ex1: Pseudo-Code à Compléter */
+.pseudo-code-block {
+    background-color: #272822; /* Fond sombre type éditeur de code */
+    color: #f8f8f2; /* Texte clair */
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-family: 'Courier New', Courier, monospace; /* Police à chasse fixe */
+    font-size: 0.95em;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Conserve les retours à la ligne et espaces */
+}
+.pseudo-code-block input[type="text"] {
+    background-color: #49483e; /* Fond plus sombre pour input */
+    color: #e6db74; /* Couleur type chaîne de caractères */
+    border: 1px solid #75715e;
+    padding: 3px 6px;
+    font-family: inherit;
+    font-size: inherit;
+    width: 250px; /* Ajuster si besoin */
+    border-radius: 3px;
+}
+.pseudo-code-block input[type="text"].correct-answer {
+    border-color: #a6e22e; /* Vert type code */
+    background-color: #303a2a;
+}
+.pseudo-code-block input[type="text"].incorrect-answer {
+    border-color: #f92672; /* Rose/Rouge type code */
+    background-color: #402831;
+}
+
+.word-bank-code { /* Boîte à mots pour Ex1 */
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #495057;
+}
+.word-bank-code strong {
+    color: #343a40;
+}
+
+
+/* Ex2: Analyse de Blocs (Image) */
+.code-block-image-large { /* Plus grand que celui du Mod7 si besoin */
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    max-width: 550px; /* Ajuster à la taille de votre image */
+    text-align: center;
+    border-radius: 4px;
+}
+.code-block-image-large img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* QCM pour Ex2 utilise styles globaux si #qcm-boucle-rcp est ajouté au sélecteur global */
+#qcm-boucle-rcp label {}
+#qcm-boucle-rcp input[type="radio"] {}
+
+
+/* Ex3: Modifier Variable (QCM) */
+/* QCM pour Ex3 utilise styles globaux si #qcm-variable-dae est ajouté au sélecteur global */
+#qcm-variable-dae label {}
+#qcm-variable-dae input[type="radio"] {}
+
+
+/* --- Responsivité spécifique au Module 10 --- */
+@media (max-width: 768px) {
+    .pseudo-code-block input[type="text"] { width: 200px; }
+    .code-block-image-large { max-width: 95%; }
+}
+@media (max-width: 480px) {
+    .pseudo-code-block { font-size: 0.85em; padding: 10px 15px;}
+    .pseudo-code-block input[type="text"] { width: 100%; max-width: 180px; } /* Prend moins de place */
+}

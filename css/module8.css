@@ -1,0 +1,120 @@
+/* --- STYLES SPÉCIFIQUES MODULE 8 : Projet - Amélioration --- */
+
+/* Ex1: QCM Projet (utilise styles QCM globaux via #qcm-form-1 dans style.css si appliqué) */
+#qcm-projet-1 label { /* Style des labels QCM */ }
+#qcm-projet-1 input[type="radio"] { /* Style des radios QCM */ }
+
+
+/* Ex2: Associer Solution/Description */
+#matching-solution-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.solution-list-projet { /* Similaire à .comm-list */
+    border: 1px dashed #20c997; /* Vert d'eau pour solutions/projet */
+    padding: 20px;
+    min-height: 150px;
+    flex-basis: 350px; /* Un peu plus large pour les descriptions de solutions */
+    flex-grow: 1;
+    background-color: #e6fefc; /* Fond très pâle */
+    border-radius: 5px;
+}
+.solution-list-projet p:first-child {
+    margin-top: 0;
+    font-weight: 600;
+    text-align: center;
+    color: #0a7561; /* Vert d'eau foncé */
+    margin-bottom: 20px;
+}
+.description-dropzones-projet { /* Conteneur des zones de dépôt descriptions */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 15px;
+}
+.dropzone-solution { /* Zone dépôt pour une description */
+    border: 2px dashed #17a2b8; /* Cyan */
+    padding: 15px;
+    min-height: 70px; /* Hauteur pour chaque description */
+    background-color: #e3f2fd; /* Bleu très clair */
+    border-radius: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.dropzone-solution p:first-child { /* Texte de la description */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #004085; /* Bleu foncé */
+}
+.dropzone-solution.over {
+    background-color: #b8daff; /* Bleu plus soutenu */
+    border-color: #0056b3;
+}
+.draggable-solution { /* Solution technique à glisser */
+    background-color: #ffffff;
+    padding: 10px 12px;
+    border: 1px solid #b8dfd8; /* Bordure vert d'eau */
+    margin-bottom: 10px;
+    cursor: grab;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    font-size: 0.95em;
+}
+.draggable-solution:active { cursor: grabbing; }
+.draggable-solution.dragging { opacity: 0.6; }
+/* Styles correction Ex2 Mod8 */
+.draggable-solution.correct { border: 2px solid green !important; }
+.draggable-solution.incorrect { border: 2px solid darkred !important; }
+
+
+/* Ex3: Ordonnancement Étapes Projet */
+#project-step-container { /* Similaire à #algo-ranking-container */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f3f5;
+    max-width: 550px; /* Limiter largeur */
+    margin: 20px auto;
+}
+ #project-step-list {
+     list-style: decimal; /* Numérotation pour l'ordre */
+     padding-left: 30px;
+     margin: 0;
+ }
+  #project-step-list li {
+      background-color: white;
+      border: 1px solid #6f42c1; /* Violet pour projet/créativité */
+      color: #492b70;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      cursor: grab;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-weight: 500;
+  }
+    #project-step-list li.dragging {
+       opacity: 0.6;
+       background-color: #e9d8fd; /* Violet clair pendant drag */
+   }
+   /* Styles de correction pour les LI */
+   #project-step-list li.correct-step { border-color: green; background-color: #d1e7dd; color: #0f5132;}
+   #project-step-list li.incorrect-step { border-color: red; background-color: #f8d7da; color: #721c24;}
+
+
+/* --- Responsivité spécifique au Module 8 --- */
+@media (max-width: 768px) {
+    #matching-solution-container { flex-direction: column; }
+    .solution-list-projet { flex-basis: auto; width: 100%; }
+    .description-dropzones-projet { width: 100%; }
+    .dropzone-solution { min-height: auto; }
+    #project-step-container { max-width: 95%; }
+    #project-step-list li { font-size: 0.95em; padding: 8px 10px;}
+}
+@media (max-width: 480px) {
+    .draggable-solution { font-size: 0.9em; padding: 8px 10px; }
+    .dropzone-solution p:first-child { font-size: 0.9em;}
+    #project-step-list li { font-size: 0.9em; }
+}
