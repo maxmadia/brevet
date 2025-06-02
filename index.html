@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entraînement Brevet Technologie - Le Défibrillateur</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS commun -->
+    <style>
+        /* Styles spécifiques à la page d'accueil */
+
+        main {
+            text-align: center; /* Centre le contenu de main */
+        }
+
+        #intro-text {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #444;
+            max-width: 750px; /* Limite largeur */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Styles pour la vidéo d'introduction --- */
+        #intro-video-container { /* Nouveau conteneur pour la vidéo et sa légende */
+            max-width: 700px; /* Largeur max du bloc vidéo+légende */
+            margin: 30px auto; /* Centrage et marges verticales */
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper { /* Conteneur direct de l'iframe pour le ratio */
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 4px; /* Coins arrondis vidéo */
+            margin-bottom: 15px; /* Espace avant légende */
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        #intro-video-container figcaption { /* Style de la légende vidéo */
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+            text-align: center; /* Centrer la légende */
+        }
+        /* --- Fin Styles Vidéo --- */
+
+        #module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille responsive */
+            gap: 20px; /* Espace entre les cartes */
+            margin-top: 40px; /* Plus d'espace après la vidéo/légende */
+            padding: 0 10px; /* Léger padding pour éviter collage aux bords */
+            text-align: left; /* Réaligne texte des cartes à gauche */
+        }
+
+        .module-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-decoration: none; /* Enlève soulignement lien */
+            color: inherit; /* Hérite couleur texte */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column; /* Pour aligner bouton en bas */
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .module-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #0056b3; /* Titre module en bleu */
+            font-size: 1.2em;
+        }
+         .module-card p {
+             font-size: 0.95em;
+             color: #555;
+             flex-grow: 1; /* Pousse le bouton en bas */
+             margin-bottom: 15px; /* Espace avant bouton */
+         }
+
+        .module-card .start-module-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none; /* Assure que le bouton n'est pas souligné */
+             margin-top: auto; /* Colle au bas de la carte */
+             align-self: center; /* Centre le bouton horizontalement */
+        }
+        .module-card .start-module-btn:hover {
+             background-color: #0056b3;
+        }
+
+        #bilan-link-container {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        #bilan-link {
+             display: inline-block;
+             padding: 12px 30px;
+             font-size: 1.1em;
+             background-color: #6c757d;
+             color: white;
+             text-decoration: none;
+             border-radius: 5px;
+             transition: background-color 0.2s ease;
+        }
+        #bilan-link:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+</head>
+<body class="page-index-avec-fond">
+    <header>
+        <h1>Entraînement Brevet Technologie</h1>
+        <h2>Objet d'étude : Le Défibrillateur Cardiaque Automatisé (DAE)</h2>
+    </header>
+
+    <main>
+        <p id="intro-text">Bienvenue ! Ce site vous propose un entraînement interactif pour réviser les notions clés du programme de Technologie de 3ème en vue du DNB, en utilisant le défibrillateur comme exemple concret.</p>
+
+        <!-- Bloc Vidéo + Légende -->
+        <figure id="intro-video-container">
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SjbqlyQ0iI8?si=6DT6o6wng_nROJtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption>
+                Cette vidéo présente le fonctionnement et l'utilisation d'un Défibrillateur Automatisé Externe (DAE). Observez les différentes étapes : préparation, placement des électrodes, analyse du rythme cardiaque, et délivrance du choc si nécessaire. C'est cet appareil et sa technologie que nous allons étudier dans les modules suivants.
+            </figcaption>
+        </figure>
+        <!-- Fin Bloc Vidéo -->
+
+
+        <h2>Choisissez un module pour commencer :</h2>
+
+        <div id="module-grid">
+            <!-- Module 1 -->
+            <a href="themes/module_1_usages_evolutions.html" class="module-card">
+                <h3>1. Usages & Évolutions</h3>
+                <p>Comprendre pourquoi le DAE existe, comment il a évolué et son impact.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+            <!-- Module 2 -->
+            <a href="themes/module_2_interactions_ergonomie.html" class="module-card">
+                <h3>2. Interactions & Ergonomie</h3>
+                <p>Analyser comment l'utilisateur et le patient interagissent avec le DAE.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+            <!-- Module 3 -->
+            <a href="themes/module_3_choix_performances.html" class="module-card">
+                <h3>3. Choix & Performances</h3>
+                <p>Étudier les critères de choix, les performances et l'impact environnemental.</p>
+                <span class="start-module-btn">Commencer →</span>
+            </a>
+            <!-- Module 4 -->
+             <a href="themes/module_4_chaine_energie.html" class="module-card">
+                <h3>4. Chaîne d'Énergie</h3>
+                <p>Identifier les composants, les conversions et les flux d'énergie.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+             <!-- Module 5 -->
+             <a href="themes/module_5_chaine_information.html" class="module-card">
+                <h3>5. Chaîne d'Information</h3>
+                <p>Analyser l'acquisition, le traitement et la communication des informations.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+             <!-- Module 6 -->
+             <a href="themes/module_6_diagnostic_depannage.html" class="module-card">
+                 <h3>6. Diagnostic & Dépannage</h3>
+                <p>Identifier les pannes simples et comprendre les auto-tests.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+             <!-- Module 7 -->
+             <a href="themes/module_7_algorithmique_programmation.html" class="module-card">
+                 <h3>7. Algorithme & Programmation</h3>
+                 <p>Comprendre la logique de décision et le séquencement des actions.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+             <!-- Module 8 -->
+             <a href="themes/module_8_projet_amelioration.html" class="module-card">
+                 <h3>8. Projet : Amélioration (Exemple)</h3>
+                 <p>Découvrir la démarche de projet pour proposer une amélioration.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+             <!-- Module 9 -->
+             <a href="themes/module_9_tests_validation.html" class="module-card">
+                 <h3>9. Tests & Validation</h3>
+                 <p>Comprendre comment on vérifie qu'un DAE fonctionne correctement.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+              <!-- Module 10 -->
+             <a href="themes/module_10_coder_dae.html" class="module-card">
+                 <h3>10. Coder pour le DAE (Simplifié)</h3>
+                 <p>Écrire des instructions simples (blocs) pour une fonction du DAE.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+
+            <!-- NOUVEAU MODULE 11 -->
+            <a href="themes/module_11_materiaux.html" class="module-card">
+                <h3>11. Matériaux & Développement Durable</h3>
+                <p>Identifier les matériaux du DAE et leur impact environnemental.</p>
+                 <span class="start-module-btn">Commencer →</span>
+            </a>
+            <!-- FIN NOUVEAU MODULE 11 -->
+        </div>
+
+        <div id="bilan-link-container">
+            <a id="bilan-link" href="bilan/bilan.html">Voir mon Bilan Global</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque - <strong> Bruno Vuillemin</strong></p>
+    </footer>
+
+    <!-- Les scripts JS ne sont généralement pas nécessaires pour une page d'index simple comme celle-ci,
+         sauf si vous avez des animations ou des chargements dynamiques pour les cartes. -->
+</body>
+</html>
