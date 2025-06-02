@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan de votre Entraînement - DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/bilan.css"> <!-- CSS Spécifique pour cette page -->
+</head>
+<body>
+    <header>
+        <h1>Bilan de votre Entraînement au Brevet</h1>
+        <h2>Objet d'étude : Le Défibrillateur Cardiaque Automatisé (DAE)</h2>
+    </header>
+
+    <main id="bilan-main">
+        <section id="recapitulatif-scores">
+            <h2>Récapitulatif de vos Scores par Module</h2>
+            <table id="table-scores">
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Votre Score</th>
+                        <th>Score Max</th>
+                        <th>Pourcentage</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-scores">
+                    <!-- Les lignes seront générées par JavaScript -->
+                    <!-- Exemple de ligne (sera supprimé par JS) :
+                    <tr>
+                        <td>Module 1 : Usages & Évolutions</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>67%</td>
+                        <td>À revoir</td>
+                    </tr>
+                    -->
+                </tbody>
+                <tfoot>
+                    <tr id="total-row">
+                        <th>TOTAL GLOBAL</th>
+                        <td id="total-score-obtenu">0</td>
+                        <td id="total-score-max">0</td>
+                        <td id="total-pourcentage">0%</td>
+                        <td id="total-statut">-</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p id="no-scores-message" class="hidden">Vous n'avez complété aucun module pour le moment. Retournez à l'accueil pour commencer !</p>
+        </section>
+
+        <section id="analyse-globale" class="hidden">
+            <h2>Analyse et Conseils</h2>
+            <div id="points-forts">
+                <h3>Vos Points Forts <span class="emoji-correct">👍</span></h3>
+                <ul id="liste-points-forts">
+                    <!-- Sera rempli par JS -->
+                </ul>
+                <p id="no-points-forts" class="hidden">Continuez vos efforts pour maîtriser plus de modules !</p>
+            </div>
+            <div id="axes-amelioration">
+                <h3>Axes d'Amélioration <span class="emoji-incorrect">🛠️</span></h3>
+                <ul id="liste-axes-amelioration">
+                    <!-- Sera rempli par JS -->
+                </ul>
+                <p id="no-axes-amelioration" class="hidden">Excellent travail, tous les modules semblent maîtrisés !</p>
+            </div>
+            <div id="conseils-generaux">
+                <h3>Conseils Généraux</h3>
+                <p>Pour les modules où votre score est plus bas, n'hésitez pas à :</p>
+                <ul>
+                    <li>Relire attentivement la leçon associée.</li>
+                    <li>Refaire les exercices (si une fonction de réinitialisation est implémentée).</li>
+                    <li>Consulter vos cours de technologie sur ces sujets.</li>
+                </ul>
+                <p>Bravo pour votre engagement dans cet entraînement !</p>
+            </div>
+        </section>
+
+        <div class="bilan-actions">
+            <a href="../index.html" class="btn-retour-accueil">Retour à l'Accueil</a>
+            <button id="reset-all-scores-btn" class="btn-reset">Réinitialiser Tous Mes Scores</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <!-- Script de notation qui devrait contenir recupererTousLesScores() et supprimerScores() -->
+    <script src="../js/notation.js"></script>
+    <!-- Script spécifique à la page bilan -->
+    <script src="../js/bilan_page.js"></script>
+</body>
+</html>
