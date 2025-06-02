@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: Chaîne d'Information - DAE</title>
+    <link rel="stylesheet" href="../css/module5.css">
+</head>
+<body>
+    <header>
+        <h1>Module 5 : La Chaîne d'Information du DAE</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : Comment le DAE "réfléchit" ?</h2>
+            <p>Un DAE ne se contente pas de délivrer un choc, il doit d'abord "comprendre" la situation. Il acquiert des informations (le rythme cardiaque), les traite pour prendre une décision, puis communique cette décision et guide l'utilisateur. C'est le rôle de la <strong>chaîne d'information</strong>.</p>
+
+            <figure class="intro-image-single" style="width: 800px; max-width: 90%; margin: 25px auto; text-align: center;">
+              <img src="https://diy7ta1tt6jst.cloudfront.net/prod/okulus/c0abd16f-c1aa-46e2-a9ee-4400702520b8" alt="Schéma générique chaîne d'énergie"
+                   style="max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee;">
+              <figcaption>
+                Schéma de principe d'une chaîne d'énergie : Alimenter, Distribuer, Convertir, Transmettre (ou Agir). Ce module se concentre sur la chaîne d'information qui la précède souvent.
+              </figcaption>
+            </figure>
+
+            <p>Dans ce module, nous allons identifier les composants qui jouent ces rôles dans le DAE et comprendre comment l'information circule et est utilisée.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Les fonctions de la Chaîne d'Information (Glisser-Déposer)</h2>
+            <p>Faites glisser chaque fonction principale de la chaîne d'information dans la case correspondante du schéma simplifié.</p>
+             <div id="chaine-info-schema-container">
+                 <img src="../images/chaine_info_base.png" alt="Schéma chaîne information DAE à compléter">
+                 <div class="drop-zone-info" id="drop-acquerir" data-correct-function="acquerir">Zone 1</div>
+                 <div class="drop-zone-info" id="drop-traiter" data-correct-function="traiter">Zone 2</div>
+                 <div class="drop-zone-info" id="drop-communiquer" data-correct-function="communiquer">Zone 2</div>
+            </div>
+            <div id="etiquettes-info-container">
+                 <span class="etiquette-info" draggable="true" data-function="traiter">TRAITER</span>
+                 <span class="etiquette-info" draggable="true" data-function="communiquer">COMMUNIQUER</span>
+                 <span class="etiquette-info" draggable="true" data-function="acquerir">ACQUÉRIR</span>
+            </div>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <!-- Le bouton "Passer à l'exercice 2" sera inséré ici par le JS -->
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+             <h2>Exercice 2 : Composants et Fonctions Info (Associer)</h2>
+             <p>Associez chaque composant clé du DAE à sa fonction principale dans la chaîne d'information en les glissant-déposant.</p>
+             <div id="matching-comp-info-container">
+                 <div class="comm-list" id="comp-info-list">
+                      <p>Composants :</p>
+                     <div class="draggable-comp-info" draggable="true" id="comp-info-micro">Microcontrôleur (Processeur)</div>
+                      <div class="draggable-comp-info" draggable="true" id="comp-info-hp">Haut-parleur</div>
+                     <div class="draggable-comp-info" draggable="true" id="comp-info-elec">Électrodes (fonction capteur ECG)</div>
+                     <div class="draggable-comp-info" draggable="true" id="comp-info-leds">Indicateurs Lumineux (LEDs)</div>
+                 </div>
+                 <div class="comm-dropzones">
+                     <div class="dropzone-comp-info" id="comp-func-acq" data-correct-comp="comp-info-elec">
+                          <p><strong>Fonction :</strong> Mesurer le signal électrique du cœur (Acquérir)</p>
+                     </div>
+                      <div class="dropzone-comp-info" id="comp-func-trait" data-correct-comp="comp-info-micro">
+                          <p><strong>Fonction :</strong> Analyser le signal et prendre la décision (Traiter)</p>
+                     </div>
+                      <div class="dropzone-comp-info" id="comp-func-comm-voc" data-correct-comp="comp-info-hp">
+                           <p><strong>Fonction :</strong> Donner les instructions audio à l'utilisateur (Communiquer)</p>
+                      </div>
+                      <div class="dropzone-comp-info" id="comp-func-comm-vis" data-correct-comp="comp-info-leds">
+                           <p><strong>Fonction :</strong> Indiquer l'état de l'appareil visuellement (Communiquer)</p>
+                      </div>
+                 </div>
+             </div>
+             <button id="validate-ex2">Valider Exercice 2</button>
+             <!-- Le bouton "Passer à l'exercice 3" sera inséré ici par le JS -->
+             <div id="feedback-ex2" class="feedback"></div>
+         </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Nature de l'Information (QCM)</h2>
+            <p>Identifiez la nature principale de l'information à différentes étapes.</p>
+            <form id="qcm-info-form">
+                <p>1. Quelle est la nature du signal capté directement par les électrodes sur le patient ?</p>
+                <label><input type="radio" name="q3_1" value="a"> Numérique (suite de 0 et 1)</label>
+                <label><input type="radio" name="q3_1" value="b" data-correct="true"> Analogique (signal électrique continu variable)</label>
+                <label><input type="radio" name="q3_1" value="c"> Sonore (bips du cœur)</label>
+
+                <p>2. Quelle est la nature de l'information traitée par le microcontrôleur après conversion ?</p>
+                <label><input type="radio" name="q3_2" value="a" data-correct="true"> Numérique (données binaires, résultats d'algorithmes)</label>
+                <label><input type="radio" name="q3_2" value="b"> Analogique (tension variable)</label>
+                <label><input type="radio" name="q3_2" value="c"> Chimique (réactions internes)</label>
+
+                <p>3. Quelle est la nature principale de l'information communiquée à l'utilisateur par le haut-parleur ?</p>
+                <label><input type="radio" name="q3_3" value="a"> Visuelle (texte sur écran)</label>
+                <label><input type="radio" name="q3_3" value="b"> Électrique (impulsion directe)</label>
+                <label><input type="radio" name="q3_3" value="c" data-correct="true"> Sonore (paroles, bips)</label>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+             <h2>Leçon : Chaîne d'Information du DAE</h2>
+             <p>La chaîne d'information gère le flux des données permettant à l'objet technique de réagir à son environnement ou aux ordres de l'utilisateur. Elle comprend typiquement trois fonctions :</p>
+             <ul>
+                 <li><strong>ACQUÉRIR :</strong> Prélever des informations sur l'environnement ou l'état interne de l'objet à l'aide de <strong>capteurs</strong> ou d'interfaces d'entrée.</li>
+                 <li><strong>TRAITER :</strong> Analyser les informations acquises, exécuter un algorithme, prendre une décision. C'est le rôle du "cerveau" de l'objet, souvent un <strong>microcontrôleur</strong> ou un processeur.</li>
+                 <li><strong>COMMUNIQUER :</strong> Transmettre des informations à l'utilisateur ou à d'autres systèmes via des <strong>effecteurs de communication</strong> (écrans, haut-parleurs, LEDs) ou des interfaces de sortie.</li>
+             </ul>
+              <p><strong>Chaîne d'Information du DAE :</strong></p>
+              <ol>
+                  <li><strong>ACQUÉRIR :</strong> Les <strong>Électrodes</strong> agissent comme des capteurs. Elles captent le signal électrique du cœur (ECG) du patient. Cette information est initialement <strong>analogique</strong> (une tension qui varie continûment). Des boutons (Marche/Arrêt, Choc) permettent aussi à l'utilisateur d'entrer des ordres.</li>
+                  <li><strong>TRAITER :</strong> Le signal analogique de l'ECG est d'abord amplifié, filtré puis <strong>converti en numérique (CAN)</strong> pour être compréhensible par le "cerveau". Le <strong>Microcontrôleur</strong> exécute alors un <strong>algorithme</strong> qui analyse ce signal numérique pour déterminer si le rythme cardiaque est choquable (FV/TV) ou non. Il prend la décision d'autoriser ou non le choc.</li>
+                  <li><strong>COMMUNIQUER :</strong> Le microcontrôleur envoie des ordres aux effecteurs :
+                      <ul>
+                          <li>Au <strong>Haut-parleur</strong> pour diffuser des instructions vocales (information <strong>sonore</strong>) ou des bips (métronome RCP).</li>
+                          <li>Aux <strong>Indicateurs Lumineux (LEDs)</strong> pour montrer l'état de l'appareil (prêt, en charge, etc.) (information <strong>visuelle</strong>).</li>
+                           <li>Potentiellement à un module de communication (WiFi, GSM...) pour envoyer des données aux secours (information <strong>numérique</strong> transmise par ondes radio).</li>
+                           <li>Il communique aussi avec la chaîne d'énergie en donnant l'ordre de charger le condensateur ou de déclencher le choc via le commutateur.</li>
+                      </ul>
+                  </li>
+              </ol>
+              <p><strong>Nature de l'Information :</strong> L'information peut être <strong>analogique</strong> (varie continûment, ex: tension, température brute) ou <strong>numérique</strong> (représentée par des nombres discrets, souvent binaires 0 ou 1, ex: données traitées par un processeur, texte). La conversion Analogique -> Numérique (CAN) et Numérique -> Analogique (CNA) est fréquente dans les systèmes électroniques.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_4_chaine_energie.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="module_6_diagnostic_depannage.html">Module Suivant →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script> <!-- Assurez-vous que ce chemin est correct -->
+    <script src="../js/module_5.js"></script>   <!-- Assurez-vous que ce chemin est correct -->
+</body>
+</html>

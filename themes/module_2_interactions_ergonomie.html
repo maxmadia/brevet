@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Interactions & Ergonomie - DAE</title>
+    <link rel="stylesheet" href="../css/module2.css">
+</head>
+<body>
+    <header>
+        <h1>Module 2 : Interactions & Ergonomie du Défibrillateur</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION (inchangée) -->
+        <section id="introduction">
+             <h2>Introduction : Comment utiliser le DAE ?</h2>
+            <p>L'efficacité d'un DAE dépend beaucoup de sa facilité d'utilisation, surtout dans une situation d'urgence. Ce module se concentre sur la manière dont l'appareil interagit avec l'utilisateur, le patient et même son environnement.</p>
+            <figure class="intro-image-single">
+                 <img src="https://ansm.sante.fr/media/cache/block_slider/uploads/2020/12/22/schema-defibrillateur.jpg" alt="Interface utilisateur d'un DAE avec boutons et indicateurs">
+                 <figcaption>Interface typique d'un DAE : boutons clairs (Marche/Arrêt, Choc), indicateurs lumineux d'état, et emplacement pour connecter les électrodes.</figcaption>
+            </figure>
+            <p>Observez les éléments visibles : Comment pensez-vous que l'appareil communique avec la personne qui l'utilise ? Comment interagit-il avec le patient ?</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+             <h2>Exercice 1 : Identifier les Interacteurs (QCM Multiple)</h2>
+            <p>Avec qui ou quoi le DAE interagit-il directement pendant son utilisation ? (Plusieurs réponses possibles)</p>
+            <form id="qcm-form-1">
+                <label><input type="checkbox" name="q1" value="utilisateur"> L'utilisateur (la personne qui manipule le DAE)</label><br>
+                <label><input type="checkbox" name="q1" value="patient"> Le patient (la victime de l'arrêt cardiaque)</label><br>
+                <label><input type="checkbox" name="q1" value="secours"> Les services de secours (par téléphone intégré)</label><br>
+                <label><input type="checkbox" name="q1" value="environnement"> L'environnement (température, humidité)</label><br>
+                <label><input type="checkbox" name="q1" value="electricite"> Le réseau électrique (pour se recharger pendant l'usage)</label><br>
+            </form>
+            <div class="button-container-ex1">
+                <button id="validate-ex1">Valider Exercice 1</button>
+                <button id="next-ex2-btn" class="hidden">Passer à l'Exercice 2</button>
+            </div>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Modes de Communication du DAE (Associer)</h2>
+            <p>Associez chaque mode de communication du DAE à sa fonction principale pour l'utilisateur.</p>
+            <div id="matching-comm-container">
+                <div class="comm-list" id="comm-modes">
+                     <p>Modes de Communication :</p>
+                    <div class="draggable-comm" draggable="true" id="comm4">Pictogrammes sur l'appareil / électrodes</div>
+                    <div class="draggable-comm" draggable="true" id="comm2">Indicateurs lumineux (LEDs)</div>
+                    <div class="draggable-comm" draggable="true" id="comm1">Instructions vocales claires</div>
+                    <div class="draggable-comm" draggable="true" id="comm3">Bip sonore (métronome RCP)</div>
+                </div>
+                <div class="comm-dropzones">
+                    <div class="dropzone-comm" id="func1">
+                         <p><strong>Fonction :</strong> Guider l'utilisateur étape par étape pendant toute la procédure.</p>
+                    </div>
+                     <div class="dropzone-comm" id="func2">
+                         <p><strong>Fonction :</strong> Montrer l'état de l'appareil (prêt, charge, choc conseillé) et où appuyer.</p>
+                    </div>
+                     <div class="dropzone-comm" id="func3">
+                         <p><strong>Fonction :</strong> Aider à maintenir le bon rythme pour le massage cardiaque (RCP).</p>
+                    </div>
+                     <div class="dropzone-comm" id="func4">
+                         <p><strong>Fonction :</strong> Indiquer visuellement et rapidement où placer les électrodes sur le patient.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container-ex2">
+                <button id="validate-ex2">Valider Exercice 2</button>
+                <button id="next-ex3-btn" class="hidden">Passer à l'Exercice 3</button>
+            </div>
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+              <h2>Exercice 3 : Ergonomie et Sécurité (Texte à trous)</h2>
+            <p>Complétez les phrases suivantes avec les mots proposés pour décrire les aspects d'ergonomie et de sécurité du DAE.</p>
+            <div class="word-bank">
+                <strong>Mots disponibles :</strong> stress / simples / erreurs / vocales / sécurité / patient / forme / taille
+            </div>
+            <div id="fill-in-blanks-form">
+                <p>1. L'ergonomie d'un DAE est cruciale car il doit être utilisable rapidement par des non-professionnels, souvent en situation de <input type="text" id="q3_1" data-answer="stress">.</p>
+                <p>2. Les boutons sont généralement peu nombreux et les instructions <input type="text" id="q3_2" data-answer="vocales"> ou visuelles sont très <input type="text" id="q3_3" data-answer="simples"> pour minimiser les <input type="text" id="q3_4" data-answer="erreurs">.</p>
+                <p>3. La <input type="text" id="q3_5" data-answer="sécurité"> est primordiale : l'appareil analyse avant de choquer et prévient quand il ne faut pas toucher le <input type="text" id="q3_6" data-answer="patient">.</p>
+                <p>4. La <input type="text" id="q3_7" data-answer="forme"> et la <input type="text" id="q3_8" data-answer="taille"> des électrodes adhésives sont conçues pour faciliter leur placement correct.</p>
+            </div>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+              <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Interactions et Ergonomie du DAE</h2>
+            <p>Un objet technique interagit avec différents éléments de son environnement. Pour le DAE, les <strong>interacteurs</strong> principaux sont :</p>
+            <ul>
+                <li><strong>Avec l'Utilisateur :</strong> C'est la personne qui met en marche et utilise l'appareil. L'interaction se fait via l'<strong>Interface Homme-Machine (IHM)</strong> :
+                    <ul>
+                        <li><strong>Sorties (DAE vers Utilisateur) :</strong> Instructions vocales, indicateurs lumineux (LEDs d'état, bouton choc clignotant), bips sonores (métronome RCP), pictogrammes. Ces éléments guident l'action et informent sur l'état.</li>
+                        <li><strong>Entrées (Utilisateur vers DAE) :</strong> Bouton Marche/Arrêt, Bouton Choc (sur modèles semi-automatiques).</li>
+                    </ul>
+                </li>
+                <li><strong>Avec le Patient :</strong> L'interaction physique et électrique se fait via les <strong>électrodes</strong> autocollantes. Elles permettent :
+                    <ul>
+                        <li>D'<strong>acquérir</strong> le signal électrique du cœur (ECG) pour l'analyse.</li>
+                        <li>De <strong>délivrer</strong> le choc électrique de manière contrôlée si nécessaire.</li>
+                    </ul>
+                </li>
+                <li><strong>Avec l'Environnement :</strong> Le DAE doit pouvoir fonctionner dans diverses conditions (température, humidité). Certains modèles intègrent des capteurs pour adapter leur fonctionnement ou signaler un problème (ex : auto-test). La <strong>robustesse</strong> aux chocs est aussi une interaction importante avec l'environnement physique.</li>
+                 <li><strong>Avec les Services de Secours (parfois) :</strong> Certains DAE plus avancés peuvent communiquer (via réseau mobile/WiFi) pour transmettre des données ECG ou signaler leur utilisation aux secours, mais ce n'est pas une interaction systématique sur tous les modèles basiques.</li>
+            </ul>
+            <p><strong>Ergonomie :</strong> C'est la science qui vise à adapter l'objet à l'utilisateur pour une utilisation efficace, confortable et sûre. Pour un DAE, l'ergonomie est essentielle car il est souvent utilisé dans l'urgence par des personnes non-expertes :</p>
+            <ul>
+                <li><strong>Simplicité :</strong> Réduire le nombre de boutons, utiliser des symboles universels (pictogrammes), et surtout des instructions vocales claires et directes pour guider l'utilisateur sans ambiguïté.</li>
+                <li><strong>Rapidité :</strong> Conception permettant une mise en œuvre très rapide (ouverture facile du capot ou de la sacoche, électrodes souvent pré-connectées à l'appareil).</li>
+                <li><strong>Guidage Utilisateur :</strong> Accompagnement vocal et/ou visuel pour chaque étape cruciale : placement des électrodes (souvent indiqué par des dessins), réalisation du massage cardiaque (métronome sonore), annonce du choc.</li>
+                <li><strong>Sécurité :</strong> Verrous logiciels et physiques pour éviter un choc accidentel (l'appareil n'autorise le choc que si l'analyse le juge nécessaire), messages d'alerte clairs ("Ne pas toucher le patient" pendant l'analyse et le choc).</li>
+                <li><strong>Adaptabilité :</strong> La forme et la taille des électrodes sont étudiées pour un placement facile. Des systèmes existent pour adapter l'énergie délivrée aux enfants (clé pédiatrique, électrodes spécifiques ou atténuateur intégré).</li>
+            </ul>
+            <p>L'objectif global de l'ergonomie du DAE est de rendre son utilisation la plus <strong>intuitive</strong> et <strong>sûre</strong> possible, même en situation de stress, pour maximiser les chances de succès de l'intervention par n'importe quel témoin.</p>
+        </article>
+
+        <nav class="module-nav">
+            <a href="module_1_usages_evolutions.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+            <a href="module_3_choix_performances.html">Module Suivant →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_2.js"></script>
+</body>
+</html>

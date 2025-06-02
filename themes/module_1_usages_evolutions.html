@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Usages & Évolutions - DAE</title>
+    <link rel="stylesheet" href="../css/module1.css">
+</head>
+<body>
+    <header>
+        <h1>Module 1 : Usages & Évolutions du Défibrillateur</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION MODIFIÉE -->
+        <section id="introduction">
+            <h2>Introduction : L'évolution pour répondre à un besoin vital</h2>
+            <p>L'arrêt cardiaque est une urgence absolue. Pour y répondre, la technologie a évolué, passant d'appareils complexes réservés aux hôpitaux à des dispositifs utilisables par tous. Comparez ces deux exemples pour comprendre cette transformation.</p>
+
+            <div class="image-comparison-container">
+                <figure class="intro-image">
+                    <img src="../images/h.png" alt="Ancien défibrillateur hospitalier sur chariot">
+                    <figcaption>
+                        <strong>Défibrillateur hospitalier (années 1960)</strong><br>
+                        Un ancien modèle monté sur chariot, avec ses commandes manuelles et son système de monitoring papier.<br>
+                        <em>Alimentation & commande manuelles :</em> boutons de réglage de l’énergie et manomètre.<br>
+                        <em>Chariot mobile :</em> pour déplacement en soins intensifs.<br>
+                        <em>Électrodes type “paddles” :</em> contacts métalliques massifs.
+                    </figcaption>
+                </figure>
+
+                <figure class="intro-image">
+                    <img src="https://hts-training.co.uk/wp-content/uploads/2019/12/defibrillator-pad-placement.jpg" alt="Schéma d'utilisation d'un DAE moderne">
+                     <figcaption>
+                        <strong>DAE moderne : schéma d’usage</strong><br>
+                        Schéma simplifié d’un Défibrillateur Automatisé Externe, orienté “utilisateur non médical”.<br>
+                        <em>Détection automatique du rythme :</em> l’appareil analyse et décide.<br>
+                        <em>Guide vocal & visuel :</em> instructions audio et pictogrammes.<br>
+                        <em>Fonction “sémi-automatique” :</em> sécurité (analyse + bouton choc).
+                    </figcaption>
+                </figure>
+            </div>
+
+            <p>Ce module explore comment le DAE, grâce à l'innovation (automatisation, simplification), est devenu un outil crucial accessible au grand public pour répondre au besoin de sauver des vies.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION MODIFIÉE -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Pourquoi un Défibrillateur ? (QCM)</h2>
+            <p>Quelle est la fonction d'usage principale d'un Défibrillateur Automatisé Externe (DAE) ?</p>
+            <form id="qcm-form-1">
+                <label><input type="radio" name="q1" value="a"> Mesurer la tension artérielle.</label><br>
+                <label><input type="radio" name="q1" value="b"> Analyser le rythme cardiaque et délivrer un choc électrique si nécessaire pour traiter certains arrêts cardiaques.</label><br>
+                <label><input type="radio" name="q1" value="c"> Aider à respirer en cas d'asthme.</label><br>
+                <label><input type="radio" name="q1" value="d"> Réaliser un massage cardiaque automatiquement.</label><br>
+            </form>
+
+            <!-- NOUVEAU CONTENEUR POUR LES BOUTONS -->
+            <div class="ex1-button-row">
+                <button id="validate-ex1">Valider Exercice 1</button>
+                <button id="next-ex2-btn" class="hidden">Passer à l'exercice 2</button>
+            </div>
+            <!-- FIN NOUVEAU CONTENEUR POUR LES BOUTONS -->
+
+            <!-- Le feedback reste en dessous -->
+            <div id="feedback-ex1" class="feedback hidden">
+                <div id="feedback-ex1-message"></div> <!-- Le message ira ici -->
+            </div>
+        </section>
+
+
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Défibrillateur d'hier et d'aujourd'hui (Associer)</h2>
+            <p>Associez chaque caractéristique au type de défibrillateur correspondant (Manuel ancien vs DAE moderne).</p>
+            <div id="matching-container">
+                <div class="match-list" id="characteristics">
+                    <p>Caractéristiques :</p>
+                    <div class="draggable" draggable="true" id="char1">Nécessite un médecin pour interpréter l'ECG et décider du choc.</div>
+                    <div class="draggable" draggable="true" id="char2">Analyse automatique du rythme cardiaque.</div>
+                    <div class="draggable" draggable="true" id="char3">Utilisable par le grand public après une courte formation.</div>
+                    <div class="draggable" draggable="true" id="char4">Souvent lourd et peu portable.</div>
+                    <div class="draggable" draggable="true" id="char5">Instructions vocales guidant l'utilisateur.</div>
+                    <div class="draggable" draggable="true" id="char6">Nécessite un réglage manuel de l'énergie du choc.</div>
+                </div>
+                <div class="match-columns">
+                    <div class="dropzone" id="zone-manuel">
+                        <p>Défibrillateur Manuel (Ancien)</p>
+                        <!-- Drop target -->
+                    </div>
+                    <div class="dropzone" id="zone-dae">
+                        <p>Défibrillateur Automatisé Externe (DAE)</p>
+                        <!-- Drop target -->
+                    </div>
+                </div>
+            </div>
+            <!-- NOUVEAU CONTENEUR POUR LES BOUTONS DE L'EXERCICE 2 -->
+            <div class="ex2-button-row">
+                <button id="validate-ex2">Valider Exercice 2</button>
+                <button id="next-ex3-btn" class="hidden">Passer à l'exercice 3</button>
+            </div>
+            <!-- FIN NOUVEAU CONTENEUR -->
+            <div id="feedback-ex2" class="feedback hidden"></div> <!-- Ajout de la classe hidden ici -->
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Impact et Contraintes (Vrai/Faux)</h2>
+            <p>Indiquez si les affirmations suivantes sont vraies ou fausses.</p>
+            <form id="true-false-form">
+                <div class="tf-statement">
+                    <p>1. L'invention du DAE a permis d'augmenter les chances de survie après un arrêt cardiaque en dehors de l'hôpital.</p>
+                    <label><input type="radio" name="q3_1" value="vrai"> Vrai</label>
+                    <label><input type="radio" name="q3_1" value="faux"> Faux</label>
+                </div>
+                <div class="tf-statement">
+                    <p>2. La principale innovation du DAE est sa capacité à refroidir le cœur du patient.</p>
+                    <label><input type="radio" name="q3_2" value="vrai"> Vrai</label>
+                    <label><input type="radio" name="q3_2" value="faux"> Faux</label>
+                </div>
+                 <div class="tf-statement">
+                    <p>3. Une contrainte majeure lors de la conception d'un DAE est d'assurer la sécurité de l'utilisateur et du patient.</p>
+                    <label><input type="radio" name="q3_3" value="vrai"> Vrai</label>
+                    <label><input type="radio" name="q3_3" value="faux"> Faux</label>
+                </div>
+                 <div class="tf-statement">
+                    <p>4. Les DAE modernes n'ont pas besoin de batterie car ils se branchent sur secteur.</p>
+                    <label><input type="radio" name="q3_4" value="vrai"> Vrai</label>
+                    <label><input type="radio" name="q3_4" value="faux"> Faux</label>
+                </div>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Usages et Évolutions du Défibrillateur</h2>
+            <p><strong>Besoin :</strong> L'arrêt cardiaque soudain (ACS) est une urgence vitale. Le cœur s'arrête de pomper efficacement le sang, souvent à cause d'un rythme électrique anormal appelé Fibrillation Ventriculaire (FV). Sans intervention rapide, les chances de survie diminuent drastiquement.</p>
+            <p><strong>Fonction d'usage :</strong> Le défibrillateur a pour but de détecter certains troubles du rythme cardiaque (comme la FV) et de délivrer un choc électrique contrôlé pour tenter de rétablir un rythme cardiaque normal.</p>
+            <p><strong>Évolution :</strong>
+                <ul>
+                    <li><strong>Défibrillateurs Manuels :</strong> Les premiers appareils étaient réservés aux médecins et personnels formés. Ils étaient souvent lourds, nécessitaient une interprétation experte de l'Électrocardiogramme (ECG) et un réglage manuel de l'énergie.</li>
+                    <li><strong>Défibrillateurs Automatisés Externes (DAE) :</strong> L'évolution majeure a été l'automatisation. Les DAE sont conçus pour être utilisés par le grand public.</li>
+                </ul>
+            </p>
+            <p><strong>Innovations Clés du DAE :</strong>
+                <ul>
+                    <li><strong>Analyse automatique de l'ECG :</strong> Un algorithme intégré analyse le rythme cardiaque via les électrodes et détermine si un choc est nécessaire. C'est une innovation de rupture qui supprime le besoin d'interprétation par un expert.</li>
+                    <li><strong>Interface simplifiée :</strong> Des instructions vocales et/ou visuelles claires guident l'utilisateur pas à pas.</li>
+                    <li><strong>Portabilité et Autonomie :</strong> Grâce aux progrès des batteries et de l'électronique, les DAE sont devenus légers, compacts et autonomes.</li>
+                </ul>
+            </p>
+             <p><strong>Impact Sociétal :</strong> La diffusion des DAE dans les lieux publics (gares, stades, entreprises...) et la simplification de leur usage ont permis une intervention beaucoup plus rapide en cas d'ACS, augmentant significativement les taux de survie.</p>
+             <p><strong>Contraintes de Conception :</strong> Un DAE doit être extrêmement fiable (analyser correctement), sûr (ne pas choquer si ce n'est pas indiqué, protéger l'utilisateur), facile à utiliser même en situation de stress, robuste, et avoir une source d'énergie autonome et durable (batterie).</p>
+        </article>
+
+        <nav class="module-nav">
+            <a href="../index.html">Retour à l'accueil</a>
+            <!-- Le bouton "Module Suivant" sera ajouté dynamiquement ou manuellement plus tard -->
+             <a href="module_2_interactions_ergonomie.html">Module Suivant →</a> <!-- Exemple de lien vers le prochain module -->
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script> <!-- Script commun pour le score -->
+    <script src="../js/module_1.js"></script> <!-- Script spécifique à ce module -->
+</body>
+</html>

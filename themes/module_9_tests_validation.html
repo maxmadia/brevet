@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 9: Tests & Validation - DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/module9.css"> <!-- CSS Spécifique Module 9 -->
+</head>
+<body>
+    <header>
+        <h1>Module 9 : Tests & Validation du DAE</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : Le DAE fonctionne-t-il comme prévu ?</h2>
+            <p>Après avoir conçu et réalisé un objet technique (ou une amélioration), il est indispensable de le <strong>tester</strong> pour s'assurer qu'il remplit bien ses fonctions et respecte les contraintes. C'est la phase de <strong>validation</strong>.</p>
+            <figure class="intro-image-single">
+                 <img src="../images/t.png" alt="Laboratoire de tests et essais">
+                 <!-- Source : CSTB (Illustratif) -->
+                 <figcaption>Des tests en laboratoire ou en conditions réelles permettent de mesurer les performances et de valider la conception d'un produit.</figcaption>
+            </figure>
+            <p>Pour un DAE, les tests sont critiques : fiabilité de l'analyse, efficacité du choc, autonomie, robustesse, clarté des instructions... Chaque aspect du cahier des charges doit être vérifié.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Pourquoi Tester ? (QCM)</h2>
+            <p>Quelle est la raison principale pour laquelle on effectue des tests rigoureux sur un DAE avant sa mise sur le marché ?</p>
+            <form id="qcm-test-1">
+                <label><input type="radio" name="q1_test" value="a"> Pour déterminer sa couleur la plus esthétique.</label><br>
+                <label><input type="radio" name="q1_test" value="b"> Pour vérifier qu'il est suffisamment lourd.</label><br>
+                <label><input type="radio" name="q1_test" value="c" data-correct="true"> Pour s'assurer de sa fiabilité, de sa sécurité et de son efficacité à sauver des vies, conformément aux normes.</label><br>
+                <label><input type="radio" name="q1_test" value="d"> Pour compter le nombre de boutons sur son interface.</label><br>
+            </form>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Types de Tests pour un DAE (Associer)</h2>
+            <p>Associez chaque type de test à ce qu'il permet de vérifier sur un DAE.</p>
+            <div id="matching-test-type-container">
+
+                <div class="test-type-list" id="test-type-list"> 
+                    <p>Types de Tests :</p>
+                    <!-- Ordre mélangé -->
+                    <div class="draggable-test" draggable="true" id="test_autonomie">Test d'autonomie de la batterie</div>
+                    <div class="draggable-test" draggable="true" id="test_ecg">Test de l'algorithme d'analyse ECG</div>
+                    <div class="draggable-test" draggable="true" id="test_choc_ip">Test de résistance aux chocs et à l'eau/poussière (Indice IP)</div>
+                    <div class="draggable-test" draggable="true" id="test_ergonomie">Test d'ergonomie et de clarté des instructions</div>
+                </div>
+                <div class="test-verification-dropzones"> <!-- Similaire à .comm-dropzones -->
+                    <div class="dropzone-test" id="verif_ecg" data-correct-test="test_ecg">
+                        <p><strong>Vérifie :</strong> Sa capacité à identifier correctement les rythmes cardiaques choquables et non choquables.</p>
+                    </div>
+                    <div class="dropzone-test" id="verif_choc_ip" data-correct-test="test_choc_ip">
+                        <p><strong>Vérifie :</strong> Sa robustesse face aux conditions environnementales et aux chutes accidentelles.</p>
+                    </div>
+                    <div class="dropzone-test" id="verif_autonomie" data-correct-test="test_autonomie">
+                        <p><strong>Vérifie :</strong> Le nombre de chocs qu'il peut délivrer ou sa durée de fonctionnement en veille.</p>
+                    </div>
+                    <div class="dropzone-test" id="verif_ergonomie" data-correct-test="test_ergonomie">
+                        <p><strong>Vérifie :</strong> Si un utilisateur non expert peut l'utiliser facilement et sans erreur en situation d'urgence.</p>
+                    </div>
+                </div>
+            </div>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Protocole de Test Simplifié (Ordonnancement)</h2>
+            <p>Pour tester la fonction "Délivrer un choc sur commande après analyse positive", remettez dans l'ordre les étapes d'un protocole de test simplifié.</p>
+            <p><em>Faites glisser les étapes pour les ordonner.</em></p>
+            <div id="protocol-step-container">
+                <ul id="protocol-step-list">
+                    <!-- Ordre initial mélangé -->
+                    <li draggable="true" data-protocol-step="allumer">Allumer le DAE.</li>
+                    <li draggable="true" data-protocol-step="resultat_attendu">Noter le résultat attendu (ex: choc délivré avec énergie X Joules).</li>
+                    <li draggable="true" data-protocol-step="mannequin">Connecter les électrodes à un mannequin de test simulant une FV.</li>
+                    <li draggable="true" data-protocol-step="mesurer_choc">Mesurer l'énergie du choc effectivement délivré à l'aide d'un analyseur de défibrillateur.</li>
+                    <li draggable="true" data-protocol-step="lancer_analyse">Laisser le DAE analyser le rythme.</li>
+                    <li draggable="true" data-protocol-step="comparer">Comparer le résultat mesuré au résultat attendu et conclure.</li>
+                    <li draggable="true" data-protocol-step="appuyer_choc">Appuyer sur le bouton "Choc" lorsque l'appareil le demande.</li>
+                </ul>
+            </div>
+
+
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Tests et Validation des Objets Techniques</h2>
+            <p>La phase de <strong>tests et validation</strong> est essentielle dans le cycle de vie d'un produit. Elle permet de s'assurer que l'objet technique est conforme au cahier des charges, qu'il est sûr, fiable et qu'il remplit correctement ses fonctions.</p>
+
+            <p><strong>Pourquoi Tester ?</strong></p>
+            <ul>
+                <li><strong>Vérifier la conformité :</strong> S'assurer que toutes les fonctions et contraintes définies dans le cahier des charges sont respectées.</li>
+                <li><strong>Garantir la sécurité :</strong> Identifier et corriger les potentiels dangers pour l'utilisateur ou l'environnement. C'est crucial pour un appareil médical comme le DAE.</li>
+                <li><strong>Mesurer les performances :</strong> Quantifier les performances de l'objet (ex: rapidité d'analyse du DAE, énergie du choc, autonomie de la batterie).</li>
+                <li><strong>Assurer la fiabilité :</strong> Vérifier que l'objet fonctionne correctement dans la durée et dans différentes conditions d'utilisation.</li>
+                <li><strong>Détecter les défauts :</strong> Trouver les erreurs de conception ou de fabrication avant la commercialisation.</li>
+            </ul>
+
+            <p><strong>Types de Tests pour un DAE (Exemples) :</strong></p>
+            <ul>
+                <li><strong>Tests fonctionnels :</strong> Vérifient chaque fonction (ex: l'algorithme d'analyse ECG reconnaît-il correctement les rythmes choquables/non choquables sur des signaux simulés ?).</li>
+                <li><strong>Tests de performance :</strong> Mesurent des grandeurs (ex: temps de charge du condensateur, énergie délivrée lors du choc, autonomie de la batterie en nombre de chocs ou en veille).</li>
+                <li><strong>Tests de robustesse/environnementaux :</strong> Soumettent l'appareil à des conditions extrêmes (chutes, vibrations, températures hautes/basses, humidité, projections d'eau - vérification de l'indice de protection IP).</li>
+                <li><strong>Tests de sécurité électrique :</strong> S'assurent qu'il n'y a pas de risque d'électrocution pour l'utilisateur ou le patient (hors du choc thérapeutique).</li>
+                <li><strong>Tests d'ergonomie (ou d'utilisabilité) :</strong> Des utilisateurs types (souvent non-experts pour un DAE public) manipulent l'appareil en situation simulée pour voir s'il est facile à comprendre et à utiliser sans erreur.</li>
+                <li><strong>Tests de compatibilité électromagnétique (CEM) :</strong> Vérifient que le DAE ne perturbe pas d'autres appareils électroniques et n'est pas perturbé par eux.</li>
+            </ul>
+
+            <p><strong>Protocole de Test :</strong></p>
+            <p>Pour qu'un test soit répétable et fiable, il suit un <strong>protocole de test</strong>. C'est une description détaillée des étapes à suivre pour réaliser le test :</p>
+            <ol>
+                <li><strong>Objectif du test :</strong> Qu'est-ce qu'on veut vérifier ?</li>
+                <li><strong>Matériel nécessaire :</strong> L'objet à tester, les instruments de mesure, les simulateurs...</li>
+                <li><strong>Conditions initiales :</strong> Comment préparer l'objet et l'environnement avant le test.</li>
+                <li><strong>Mode opératoire :</strong> Description précise des actions à effectuer, étape par étape.</li>
+                <li><strong>Mesures à effectuer :</strong> Quelles grandeurs va-t-on mesurer ?</li>
+                <li><strong>Résultats attendus :</strong> Quelles sont les valeurs ou les comportements attendus si l'objet fonctionne correctement (souvent issus du cahier des charges) ?</li>
+                <li><strong>Critères d'acceptation :</strong> Comment va-t-on décider si le test est réussi ou non ?</li>
+            </ol>
+            <p>Après le test, les résultats obtenus sont comparés aux résultats attendus. Si l'objet ne passe pas les tests, des modifications sont apportées à sa conception et il est re-testé (cycle itératif).</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_8_projet_amelioration.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <!-- <a href="module_10_coder_dae.html">Module Suivant →</a> Mettre à jour si Module 10 est le suivant -->
+             <a href="../themes/module_10_coder_dae.html">Module Suivant →</a> <!-- Si c'est le dernier module -->
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_9.js"></script>
+</body>
+</html>

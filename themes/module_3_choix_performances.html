@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Choix, Performances & Développement Durable - DAE</title>
+    <link rel="stylesheet" href="../css/module3.css">
+    <!-- Style spécifique pour tableau et ordonnancement déjà dans style.css -->
+</head>
+<body>
+    <header>
+        <h1>Module 3 : Choix, Performances & Développement Durable</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION MODIFIÉE -->
+        <section id="introduction">
+            <h2>Introduction : Critères de choix et performances d'un DAE</h2>
+            <p>Au-delà du fonctionnement de base, plusieurs facteurs influencent le choix et l'efficacité d'un DAE. Découvrez le processus de fabrication de notre défibrillateur Clark. C’est à Honfleur, en Normandie, que la production se déroule, chez Alliansys !</p> <!-- Texte modifié selon votre version -->
+            <!-- Intégration de VOTRE vidéo -->
+             <figure id="intro-video-container">
+                 <div class="video-wrapper">
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/SAtyv3ykyjM?si=vnMfeiWwpxLyHQ5t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                 <!-- Légende ajoutée/modifiée pour correspondre au texte d'intro -->
+                 <figcaption>Vidéo illustrant les étapes de fabrication et les composants d'un DAE.</figcaption>
+            </figure>
+            <!-- Fin intégration vidéo -->
+            <p>Dans ce module, nous allons analyser plus en détail les performances attendues, les critères de choix importants (y compris le coût et l'impact environnemental lié au développement durable) lors de la sélection ou de l'évaluation d'un défibrillateur.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION MODIFIÉE -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+             <!-- Exercice 1 -->
+              <h2>Exercice 1 : Critères de Performance Essentiels (QCM)</h2>
+            <p>Parmi les critères suivants, lequel est LE PLUS critique pour la performance d'un DAE en situation d'urgence ?</p>
+            <form id="qcm-form-1">
+                <label><input type="radio" name="q1" value="a"> La couleur du boîtier.</label><br>
+                <label><input type="radio" name="q1" value="b"> La fiabilité de l'analyse du rythme cardiaque et la rapidité de délivrance du choc.</label><br>
+                <label><input type="radio" name="q1" value="c"> Le nombre de langues disponibles pour les instructions vocales.</label><br>
+                <label><input type="radio" name="q1" value="d"> La présence d'un écran LCD couleur haute définition.</label><br>
+            </form>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <button id="next-ex2" class="hidden" style="margin-left: 10px;">Passer à l'exercice 2</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+<!-- SECTION EXERCICE 2 REFAITE -->
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Cycle de Vie et Développement Durable (Choix Multiples)</h2>
+            <p>Pour chaque étape du cycle de vie et chaque pilier du développement durable, sélectionnez l'enjeu qui vous semble <strong>le plus représentatif</strong> pour un DAE.</p>
+            <form id="table-form-2">
+                <table class="criteria-table">
+                     <thead>
+                        <tr>
+                            <th>Étape / Pilier</th>
+                            <th>Enjeu Écologique Principal</th>
+                            <th>Enjeu Économique Principal</th>
+                            <th>Enjeu Social Principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ligne FABRICATION -->
+                        <tr>
+                            <td><strong>Fabrication</strong></td>
+                            <td>
+                                <!-- Options Écologiques Fabrication -->
+                                <label><input type="radio" name="q2_fab_eco" value="a"> Pollution de l'air par les usines d'assemblage.</label><br>
+                                <label><input type="radio" name="q2_fab_eco" value="b" data-correct="true"> Épuisement des ressources (métaux rares, pétrole pour plastique).</label><br>
+                                <label><input type="radio" name="q2_fab_eco" value="c"> Consommation d'eau pour nettoyer les composants.</label>
+                            </td>
+                            <td>
+                                <!-- Options Économiques Fabrication -->
+                                <label><input type="radio" name="q2_fab_econ" value="a" data-correct="true"> Coût élevé des composants électroniques et de la batterie.</label><br>
+                                <label><input type="radio" name="q2_fab_econ" value="b"> Coût du transport des pièces détachées.</label><br>
+                                <label><input type="radio" name="q2_fab_econ" value="c"> Salaire des ingénieurs concepteurs.</label>
+                            </td>
+                             <td>
+                                 <!-- Options Sociales Fabrication -->
+                                <label><input type="radio" name="q2_fab_soc" value="a"> Niveau de bruit dans l'usine d'assemblage.</label><br>
+                                <label><input type="radio" name="q2_fab_soc" value="b"> Création d'emplois dans le pays de production.</label><br>
+                                <label><input type="radio" name="q2_fab_soc" value="c" data-correct="true"> Respect des conditions de travail (si sous-traitance lointaine).</label>
+                             </td>
+                        </tr>
+                        <!-- Ligne UTILISATION -->
+                        <tr>
+                            <td><strong>Utilisation</strong></td>
+                             <td>
+                                 <!-- Options Écologiques Utilisation -->
+                                <label><input type="radio" name="q2_use_eco" value="a"> Bruit généré par les instructions vocales.</label><br>
+                                <label><input type="radio" name="q2_use_eco" value="b" data-correct="true"> Production de déchets (électrodes et batterie périmées).</label><br>
+                                <label><input type="radio" name="q2_use_eco" value="c"> Consommation électrique pendant l'auto-test.</label>
+                             </td>
+                             <td>
+                                 <!-- Options Économiques Utilisation -->
+                                <label><input type="radio" name="q2_use_econ" value="a"> Coût de l'électricité pour les auto-tests.</label><br>
+                                <label><input type="radio" name="q2_use_econ" value="b" data-correct="true"> Coût de la maintenance (remplacement batterie/électrodes).</label><br>
+                                <label><input type="radio" name="q2_use_econ" value="c"> Assurance nécessaire pour l'appareil.</label>
+                             </td>
+                             <td>
+                                  <!-- Options Sociales Utilisation -->
+                                <label><input type="radio" name="q2_use_soc" value="a" data-correct="true"> Augmentation des chances de survie en cas d'arrêt cardiaque.</label><br>
+                                <label><input type="radio" name="q2_use_soc" value="b"> Formation des citoyens aux gestes de premiers secours.</label><br>
+                                <label><input type="radio" name="q2_use_soc" value="c"> Stress généré chez l'utilisateur lors de l'emploi.</label>
+                             </td>
+                        </tr>
+                         <!-- Ligne FIN DE VIE -->
+                        <tr>
+                             <td><strong>Fin de Vie</strong></td>
+                             <td>
+                                 <!-- Options Écologiques Fin de vie -->
+                                 <label><input type="radio" name="q2_end_eco" value="a"> Espace occupé par le DAE mis au rebut.</label><br>
+                                 <label><input type="radio" name="q2_end_eco" value="b"> Énergie nécessaire pour le transport vers la décharge.</label><br>
+                                 <label><input type="radio" name="q2_end_eco" value="c" data-correct="true"> Pollution potentielle si non recyclé (métaux lourds batterie).</label>
+                             </td>
+                             <td>
+                                 <!-- Options Économiques Fin de vie -->
+                                 <label><input type="radio" name="q2_end_econ" value="a" data-correct="true"> Coût du processus de recyclage spécialisé (DEEE).</label><br>
+                                 <label><input type="radio" name="q2_end_econ" value="b"> Perte de la valeur résiduelle de l'appareil.</label><br>
+                                 <label><input type="radio" name="q2_end_econ" value="c"> Revenu de la vente des matériaux recyclés.</label>
+                             </td>
+                             <td>
+                                  <!-- Options Sociales Fin de vie -->
+                                 <label><input type="radio" name="q2_end_soc" value="a"> Création d'emplois dans la filière recyclage.</label><br>
+                                 <label><input type="radio" name="q2_end_soc" value="b" data-correct="true"> Risques sanitaires liés à l'exportation illégale des déchets électroniques.</label><br>
+                                 <label><input type="radio" name="q2_end_soc" value="c"> Complexité des lois sur le traitement des déchets.</label>
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <!-- Le bouton next-ex3 sera inséré ici par JS s'il n'existe pas -->
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+        <!-- FIN SECTION EXERCICE 2 REFAITE -->
+        <section id="exercise-3" class="exercise-section hidden">
+             <!-- Exercice 3 -->
+             <h2>Exercice 3 : Prioriser les Critères (Ordonnancement)</h2>
+            <p>Classez les critères suivants par ordre d'importance décroissant (du plus important au moins important) pour le choix d'un DAE destiné à un lieu public (ex: Mairie, Gare).</p>
+             <p><em>Faites glisser les éléments pour les ordonner.</em></p>
+             <div id="ranking-container">
+                 <ul id="ranking-list">
+                    <li draggable="true" data-rank-id="cout"><span class="rank-handle">☰</span>Coût d'achat et de maintenance</li>
+                    <li draggable="true" data-rank-id="fiabilite"><span class="rank-handle">☰</span>Fiabilité de l'analyse et du choc</li>
+                    <li draggable="true" data-rank-id="facilite"><span class="rank-handle">☰</span>Facilité d'utilisation pour un non-expert</li>
+                    <li draggable="true" data-rank-id="autonomie"><span class="rank-handle">☰</span>Autonomie de la batterie</li>
+                    <li draggable="true" data-rank-id="design"><span class="rank-handle">☰</span>Design et couleur du boîtier</li>
+                 </ul>
+             </div>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+              <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+             <h2>Leçon : Choix, Performances et Développement Durable</h2>
+             <p>Choisir un objet technique comme un DAE ne se fait pas au hasard...</p>
+               <p><strong>1. Performances Techniques :</strong></p>
+                <ul>
+                    <li><strong>Fiabilité de l'analyse ECG :</strong> Capacité à reconnaître correctement les rythmes cardiaques nécessitant un choc (FV/TV) et à ne PAS choquer les autres rythmes. C'est le critère <strong>le plus critique</strong>.</li>
+                    <li><strong>Efficacité du choc :</strong> L'énergie et la forme de l'onde électrique délivrée doivent être efficaces pour arrêter la fibrillation.</li>
+                    <li><strong>Rapidité :</strong> Temps court entre l'allumage, l'analyse et la disponibilité du choc. Chaque seconde compte.</li>
+                    <li><strong>Autonomie :</strong> Durée de vie de la batterie en veille et nombre de chocs possibles. Doit être suffisant pour couvrir la période avant le remplacement préventif.</li>
+                    <li><strong>Robustesse :</strong> Résistance aux chocs, à l'eau et à la poussière (indices IP).</li>
+                </ul>
+                <p><strong>2. Ergonomie (vue au Module 2) :</strong> Facilité d'utilisation, clarté des instructions.</p>
+                <p><strong>3. Coût :</strong></p>
+                <ul>
+                    <li><strong>Coût d'acquisition :</strong> Prix d'achat de l'appareil.</li>
+                    <li><strong>Coût de possession :</strong> Inclut le remplacement périodique des consommables (batterie, électrodes dont la date de péremption est dépassée) et la maintenance éventuelle.</li>
+                </ul>
+                <p><strong>4. Développement Durable :</strong></p>
+                <p>Il repose sur trois piliers :</p>
+                <ul>
+                    <li><strong>Environnemental :</strong> Minimiser l'impact sur la planète. Pour le DAE :
+                        <ul>
+                            <li>Choix de matériaux moins polluants ou recyclés.</li>
+                            <li>Consommation d'énergie optimisée (batterie longue durée).</li>
+                            <li><strong>Recyclage</strong> en fin de vie (très important pour les batteries et l'électronique contenant des métaux lourds ou précieux).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Économique :</strong> Assurer la viabilité économique. Pour le DAE :
+                        <ul>
+                            <li>Coût de fabrication raisonnable.</li>
+                            <li>Maintenance et consommables abordables.</li>
+                            <li>Durabilité de l'appareil.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Social :</strong> Bénéfices pour la société et les individus. Pour le DAE :
+                        <ul>
+                            <li><strong>Sauver des vies</strong> (bénéfice social majeur).</li>
+                            <li>Accessibilité de l'appareil au plus grand nombre.</li>
+                            <li>Prise en compte des conditions de travail lors de la fabrication.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Cycle de Vie :</strong> L'analyse du développement durable se fait sur tout le cycle de vie : extraction des matières premières, fabrication, transport, utilisation, et fin de vie (recyclage/élimination).</p>
+                <p><strong>Priorisation :</strong> Pour un DAE public, la <strong>fiabilité</strong> et la <strong>facilité d'utilisation</strong> sont primordiales, suivies de près par l'<strong>autonomie</strong> et la <strong>robustesse</strong>. Le <strong>coût</strong> est un facteur important pour permettre une large diffusion. Les aspects environnementaux (recyclage) et le <strong>design</strong> sont généralement considérés ensuite, bien que de plus en plus importants.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_2_interactions_ergonomie.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+            <a href="module_4_chaine_energie.html">Module Suivant →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_3.js"></script>
+</body>
+</html>

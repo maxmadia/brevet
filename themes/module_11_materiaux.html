@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 11: Matériaux & Développement Durable - DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/module11.css"> <!-- CSS Spécifique Module 11 -->
+    <style>
+        /* Styles basiques pour emojis si non définis ailleurs */
+        .emoji-correct { color: green; font-weight: bold; }
+        .emoji-incorrect { color: darkred; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Module 11 : Matériaux & Développement Durable du DAE</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : De quoi est fait un DAE ?</h2>
+            <p>Le choix des matériaux pour un objet technique n'est jamais anodin. Il doit répondre à des exigences de fonctionnement, de sécurité, de coût, et de plus en plus, d'impact environnemental. Le DAE est un excellent exemple de la diversité des matériaux utilisés.</p>
+            <figure class="intro-image-single">
+                 <img src="https://www.usinenouvelle.com/mediatheque/9/0/5/000959509_896x598_c.jpg" alt="Composants électroniques et plastiques">
+                 <!-- Source : Usine Nouvelle (Illustratif - composants divers) -->
+                 <figcaption>Un DAE combine des plastiques pour le boîtier, des métaux pour les circuits et électrodes, et des matériaux spécifiques pour la batterie.</figcaption>
+            </figure>
+            <p>Dans ce module, nous allons identifier les principaux matériaux du DAE, comprendre pourquoi ils ont été choisis, et évaluer leur impact dans une démarche de développement durable.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Propriétés des Matériaux (QCM)</h2>
+            <p>Le boîtier externe d'un DAE doit protéger les composants internes et assurer la sécurité de l'utilisateur. Quelle propriété principale doit avoir le matériau du boîtier ?</p>
+            <form id="qcm-mat-1">
+                <label><input type="radio" name="q1_mat" value="a"> Être un excellent conducteur électrique.</label><br>
+                <label><input type="radio" name="q1_mat" value="b" data-correct="true"> Être un bon isolant électrique et résistant aux chocs.</label><br>
+                <label><input type="radio" name="q1_mat" value="c"> Être très lourd pour assurer sa stabilité.</label><br>
+                <label><input type="radio" name="q1_mat" value="d"> Être transparent pour voir les circuits.</label><br>
+            </form>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <!-- Le bouton "Passer à l'exercice 2" sera inséré ici par le JS -->
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Matériaux et Fonctions (Associer)</h2>
+            <p>Associez chaque matériau ou type de matériau à sa fonction principale ou à un composant clé du DAE où il est utilisé.</p>
+            <div id="matching-mat-func-container">
+                <div id="material-list" class="material-list"> <!-- ID ajouté pour D&D retour à la source -->
+                    <p>Matériaux / Types :</p>
+                    <!-- Ordre mélangé -->
+                    <div class="draggable-mat" draggable="true" id="mat_plastique">Plastique (ex: ABS, Polycarbonate)</div>
+                    <div class="draggable-mat" draggable="true" id="mat_cuivre">Cuivre ou autre métal bon conducteur</div>
+                    <div class="draggable-mat" draggable="true" id="mat_lithium">Lithium et autres composés spécifiques</div>
+                    <div class="draggable-mat" draggable="true" id="mat_gel">Gel conducteur et adhésif</div>
+                </div>
+                <div class="component-dropzones"> <!-- Similaire à .comm-dropzones -->
+                    <div class="dropzone-mat" id="comp_boitier" data-correct-material="mat_plastique">
+                        <p><strong>Utilisation/Composant :</strong> Boîtier externe de l'appareil.</p>
+                    </div>
+                    <div class="dropzone-mat" id="comp_circuits" data-correct-material="mat_cuivre">
+                        <p><strong>Utilisation/Composant :</strong> Pistes des circuits imprimés, câblage interne.</p>
+                    </div>
+                    <div class="dropzone-mat" id="comp_batterie" data-correct-material="mat_lithium">
+                        <p><strong>Utilisation/Composant :</strong> Batterie (source d'énergie).</p>
+                    </div>
+                    <div class="dropzone-mat" id="comp_electrodes_contact" data-correct-material="mat_gel">
+                        <p><strong>Utilisation/Composant :</strong> Interface des électrodes avec la peau du patient.</p>
+                    </div>
+                </div>
+            </div>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <!-- Le bouton "Passer à l'exercice 3" sera inséré ici par le JS -->
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Impact Environnemental (Choix multiples)</h2>
+            <p>Concernant le développement durable et le cycle de vie des matériaux d'un DAE, quelles affirmations sont correctes ? (Plusieurs réponses possibles)</p>
+            <form id="qcm-mat-impact">
+                <label><input type="checkbox" name="q3_impact" value="a" data-correct="true"> Le recyclage des batteries est crucial pour éviter la dispersion de métaux lourds.</label><br>
+                <label><input type="checkbox" name="q3_impact" value="b"> Les plastiques utilisés dans les DAE sont toujours biodégradables.</label><br>
+                <label><input type="checkbox" name="q3_impact" value="c" data-correct="true"> L'extraction de métaux rares pour l'électronique a un impact environnemental significatif.</label><br>
+                <label><input type="checkbox" name="q3_impact" value="d"> Un DAE en fin de vie peut être jeté avec les ordures ménagères.</label><br>
+                <label><input type="checkbox" name="q3_impact" value="e" data-correct="true"> Choisir des matériaux facilement séparables en fin de vie facilite leur recyclage.</label><br>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Matériaux du DAE et Développement Durable</h2>
+            <p>Le choix des matériaux pour un Défibrillateur Automatisé Externe (DAE) est un compromis entre plusieurs exigences : performance, sécurité, coût et impact environnemental.</p>
+
+            <p><strong>Principaux Matériaux et Leurs Fonctions :</strong></p>
+            <ul>
+                <li><strong>Boîtier externe :</strong>
+                    <ul>
+                        <li>Matériau : Souvent des <strong>plastiques techniques</strong> (ABS, Polycarbonate, ou mélanges).</li>
+                        <li>Propriétés recherchées : <strong>Isolant électrique</strong> (sécurité cruciale pour l'utilisateur et le patient), <strong>résistance aux chocs</strong> (doit survivre à une chute), légèreté (portabilité), facilité de moulage, coût modéré.</li>
+                    </ul>
+                </li>
+                <li><strong>Composants Électroniques (Circuits Imprimés - PCB) :</strong>
+                    <ul>
+                        <li>Matériaux : Substrat isolant (fibre de verre époxy - FR4), pistes conductrices en <strong>cuivre</strong>, soudures (alliages à base d'étain, sans plomb de plus en plus). Les composants eux-mêmes (résistances, condensateurs, microcontrôleur) utilisent une variété de semi-conducteurs (silicium), métaux (or, tantale) et céramiques.</li>
+                        <li>Propriétés : Conductivité électrique (cuivre), isolation (substrat), miniaturisation.</li>
+                    </ul>
+                </li>
+                <li><strong>Électrodes :</strong>
+                    <ul>
+                        <li>Matériaux : Une partie métallique conductrice (souvent recouverte d'étain ou d'argent/chlorure d'argent) pour le contact électrique, un support souple, et un <strong>gel hydrogel conducteur et adhésif</strong> pour assurer un bon contact avec la peau et réduire l'impédance. Le câble est en cuivre avec une gaine isolante.</li>
+                        <li>Propriétés : Bonne conductivité électrique, biocompatibilité du gel, flexibilité, adhérence.</li>
+                    </ul>
+                </li>
+                <li><strong>Batterie :</strong>
+                    <ul>
+                        <li>Matériaux : Technologie principale est le <strong>Lithium</strong> (ex: dioxyde de manganèse-lithium Li/MnO2, ou chlorure de thionyle-lithium Li/SOCl2 pour les non-rechargeables de longue durée). Contient aussi d'autres métaux et des électrolytes.</li>
+                        <li>Propriétés : Haute densité énergétique (beaucoup d'énergie dans un petit volume/poids), longue durée de vie en veille, capacité à délivrer un courant élevé.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Développement Durable et Cycle de Vie des Matériaux du DAE :</strong></p>
+            <ul>
+                <li><strong>Extraction & Fabrication :</strong>
+                    <ul>
+                        <li>L'extraction des métaux (cuivre, lithium, métaux rares pour l'électronique) peut être énergivore et avoir un impact environnemental (mines, consommation d'eau, rejets).</li>
+                        <li>La production de plastiques est issue de la pétrochimie (ressource non renouvelable).</li>
+                    </ul>
+                </li>
+                <li><strong>Utilisation :</strong>
+                    <ul>
+                        <li>La principale préoccupation est la durée de vie des consommables : les <strong>batteries</strong> et les <strong>électrodes</strong> ont des dates de péremption et doivent être remplacées, générant des déchets même si le DAE n'a pas été utilisé.</li>
+                    </ul>
+                </li>
+                <li><strong>Fin de Vie :</strong>
+                    <ul>
+                        <li>Un DAE est un <strong>DEEE</strong> (Déchet d'Équipement Électrique et Électronique). Il ne doit **jamais** être jeté avec les ordures ménagères.</li>
+                        <li><strong>Recyclage :</strong> Crucial pour récupérer les métaux de valeur (cuivre, or...) et pour traiter de manière sûre les composants dangereux (métaux lourds dans les anciennes batteries, certains composants électroniques). Les plastiques peuvent aussi être recyclés s'ils sont correctement triés.</li>
+                        <li>La conception de l'appareil (facilité de démontage, identification des plastiques) influence sa recyclabilité.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>L'<strong>éco-conception</strong> vise à minimiser l'impact environnemental d'un produit sur tout son cycle de vie, en choisissant des matériaux moins impactants, en facilitant le recyclage, en optimisant la consommation d'énergie, etc.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_10_coder_dae.html">← Module Précédent</a> <!-- Lien vers le module 10 -->
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="../bilan/bilan.html">Voir mon Bilan →</a> <!-- Dernier module, lien vers bilan -->
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_11.js"></script>
+</body>
+</html>

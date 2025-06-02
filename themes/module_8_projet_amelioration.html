@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8: Projet - Améliorer le DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/module8.css"> <!-- CSS Spécifique Module 8 -->
+</head>
+<body>
+    <header>
+        <h1>Module 8 : Projet - Améliorer le DAE (Exemple)</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : Et si on améliorait le DAE ?</h2>
+            <p>Les objets techniques évoluent constamment pour mieux répondre aux besoins ou pour intégrer de nouvelles fonctionnalités. Imaginer des améliorations fait partie du travail de conception.</p>
+            <figure class="intro-image-single">
+                 <img src="../images/p.png" alt="Illustration de brainstorming et d'idées">
+                 <!-- Source : Dreamstime (Illustratif) -->
+                 <figcaption>La démarche de projet commence souvent par identifier un problème ou un besoin d'amélioration, puis par imaginer des solutions.</figcaption>
+            </figure>
+            <p>Dans ce module, nous allons simuler quelques étapes d'un mini-projet visant à améliorer un aspect du Défibrillateur Automatisé Externe.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Identifier un Besoin d'Amélioration (QCM)</h2>
+            <p>Parmi les situations suivantes, laquelle pourrait justifier une amélioration pertinente pour un DAE ?</p>
+            <form id="qcm-projet-1">
+                <label><input type="radio" name="q1_projet" value="a"> Le DAE n'est pas assez coloré et son design est triste.</label><br>
+                <label><input type="radio" name="q1_projet" value="b" data-correct="true"> Des témoins ont du mal à localiser rapidement le DAE le plus proche dans un grand bâtiment public en cas d'urgence.</label><br>
+                <label><input type="radio" name="q1_projet" value="c"> Le DAE ne propose pas de musique d'ambiance pendant son utilisation.</label><br>
+                <label><input type="radio" name="q1_projet" value="d"> Le DAE ne peut pas envoyer de messages sur les réseaux sociaux.</label><br>
+            </form>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Proposer des Solutions Techniques (Associer)</h2>
+            <p>Pour le besoin "Améliorer la localisation rapide d'un DAE", associez chaque solution technique proposée à sa description.</p>
+            <div id="matching-solution-container">
+                <div class="solution-list-projet"> <!-- Similaire à .comm-list -->
+                    <p>Solutions Techniques Proposées :</p>
+                    <div class="draggable-solution" draggable="true" id="sol-gps">Intégrer un module GPS et une connexion réseau.</div>
+                    <div class="draggable-solution" draggable="true" id="sol-signal">Ajouter une signalétique lumineuse et sonore plus visible/audible sur le boîtier du DAE.</div>
+                    <div class="draggable-solution" draggable="true" id="sol-app">Développer une application mobile de cartographie des DAE.</div>
+                    <div class="draggable-solution" draggable="true" id="sol-plan">Afficher des plans clairs indiquant l'emplacement des DAE dans le bâtiment.</div>
+                </div>
+                <div class="description-dropzones-projet"> <!-- Similaire à .comm-dropzones -->
+                    <div class="dropzone-solution" id="desc-gps" data-correct-solution="sol-gps">
+                        <p><strong>Description :</strong> Permettrait au DAE de transmettre sa position et d'être visible sur une carte en temps réel.</p>
+                    </div>
+                    <div class="dropzone-solution" id="desc-signal" data-correct-solution="sol-signal">
+                        <p><strong>Description :</strong> Aiderait à repérer le DAE de loin ou dans un environnement bruyant une fois qu'on est à proximité.</p>
+                    </div>
+                    <div class="dropzone-solution" id="desc-app" data-correct-solution="sol-app">
+                        <p><strong>Description :</strong> Permettrait aux citoyens de trouver le DAE le plus proche d'eux grâce à leur smartphone.</p>
+                    </div>
+                    <div class="dropzone-solution" id="desc-plan" data-correct-solution="sol-plan">
+                        <p><strong>Description :</strong> Solution simple et non technologique pour guider les personnes déjà sur place.</p>
+                    </div>
+                </div>
+            </div>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Étapes d'un Mini-Projet (Ordonnancement)</h2>
+            <p>Voici des étapes désordonnées d'un mini-projet de conception. Remettez-les dans un ordre logique, de la première à la dernière.</p>
+            <p><em>Faites glisser les étapes pour les ordonner.</em></p>
+            <div id="project-step-container"> <!-- Similaire à algo-ranking-container -->
+                <ul id="project-step-list">
+                    <!-- Ordre initial mélangé -->
+                    <li draggable="true" data-project-step="tests">Tester le prototype et évaluer s'il répond au besoin.</li>
+                    <li draggable="true" data-project-step="besoin">Identifier clairement le besoin ou le problème à résoudre.</li>
+                    <li draggable="true" data-project-step="cahier_charges">Rédiger un cahier des charges simple (fonctions attendues, contraintes).</li>
+                    <li draggable="true" data-project-step="solutions">Imaginer et comparer plusieurs solutions possibles.</li>
+                    <li draggable="true" data-project-step="realisation">Réaliser un prototype ou une maquette de la solution choisie.</li>
+                    <li draggable="true" data-project-step="choix_solution">Choisir la solution la plus pertinente en fonction des contraintes.</li>
+                </ul>
+            </div>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Démarche de Projet et Innovation</h2>
+            <p>Un <strong>projet technique</strong> est une démarche organisée visant à créer un nouvel objet technique ou à améliorer un objet existant pour répondre à un <strong>besoin</strong> identifié.</p>
+            <p><strong>Les Étapes Clés d'un Projet (simplifié) :</strong></p>
+            <ol>
+                <li><strong>1. Identifier le Besoin :</strong> Quel est le problème à résoudre ? À quel besoin l'objet doit-il répondre ? Qui sont les utilisateurs ?
+                    <em>Ex: Pour le DAE, le besoin initial était de traiter les arrêts cardiaques. Un besoin d'amélioration pourrait être de faciliter sa localisation.</em>
+                </li>
+                <li><strong>2. Rédiger un Cahier des Charges :</strong> Ce document décrit les fonctions que l'objet doit remplir (fonctions d'usage, fonctions techniques) et les contraintes à respecter (sécurité, coût, délai, matériaux, normes, développement durable...).
+                    <em>Ex: Pour améliorer la localisation du DAE, une fonction pourrait être "Signaler sa présence visiblement". Une contrainte pourrait être "Ne pas augmenter significativement le coût de l'appareil".</em>
+                </li>
+                <li><strong>3. Imaginer des Solutions :</strong> Phase de créativité (brainstorming) où l'on explore différentes idées techniques pour réaliser les fonctions.
+                    <em>Ex: Pour "Signaler sa présence", solutions : LED clignotante puissante, alarme sonore, connexion à une carte interactive...</em>
+                </li>
+                <li><strong>4. Comparer et Choisir une Solution :</strong> Évaluer les solutions imaginées en fonction des critères du cahier des charges (faisabilité, coût, efficacité, respect des contraintes).
+                    <em>Ex: Une LED est peu coûteuse et simple à intégrer. Un module GPS+GSM est plus cher et complexe.</em>
+                </li>
+                <li><strong>5. Concevoir et Réaliser :</strong> Détailler la solution choisie (schémas, plans) et fabriquer un <strong>prototype</strong> (première version fonctionnelle) ou une <strong>maquette</strong> (représentation visuelle).
+                    <em>Ex: Ajouter un circuit de LED haute luminosité au boîtier du DAE.</em>
+                </li>
+                <li><strong>6. Tester et Valider :</strong> Vérifier si le prototype fonctionne comme attendu et s'il répond bien au besoin initial et aux contraintes du cahier des charges. Des ajustements sont souvent nécessaires.
+                    <em>Ex: Le DAE est-il plus visible de loin avec la nouvelle LED ? La batterie se décharge-t-elle trop vite ?</em>
+                </li>
+            </ol>
+            <p><strong>Innovation :</strong> C'est l'introduction d'une nouveauté ou d'une amélioration significative dans un produit, un service ou un procédé. Elle peut être :</p>
+            <ul>
+                <li><strong>Incrémentale :</strong> Amélioration d'un produit existant (ex: DAE plus léger, batterie plus autonome).</li>
+                <li><strong>De rupture (ou radicale) :</strong> Introduction d'un produit ou concept totalement nouveau qui change les usages (ex: le passage du défibrillateur manuel à l'DAE automatique pour le grand public).</li>
+            </ul>
+            <p>La démarche de projet est itérative : on peut revenir à des étapes précédentes si les tests ne sont pas concluants ou si de nouvelles contraintes apparaissent.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_7_algorithmique_programmation.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="module_9_tests_validation.html">Module Suivant →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_8.js"></script>
+</body>
+</html>

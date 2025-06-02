@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 10: Coder pour le DAE - DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/module10.css"> <!-- CSS Spécifique Module 10 -->
+</head>
+<body>
+    <header>
+        <h1>Module 10 : Coder pour le DAE (Simplifié)</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : Donner des instructions au DAE</h2>
+            <p>Nous avons vu que le DAE suit un algorithme. Cet algorithme est traduit en un <strong>programme</strong>, une série d'instructions qu'un ordinateur (le microcontrôleur du DAE) peut exécuter. On utilise souvent des langages par blocs pour débuter en programmation.</p>
+            <figure class="intro-image-single">
+                 <img src="../images/c.png" alt="Logo Scratch">
+                 <!-- Source : ac-nice.fr (Illustratif) -->
+                 <figcaption>Scratch est un exemple de langage de programmation par blocs, rendant le code plus visuel et accessible.</figcaption>
+            </figure>
+            <p>Dans ce module, nous allons analyser des petits extraits de programmes (en pseudo-code ou blocs simplifiés) liés aux fonctions du DAE.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Condition de Choc (Pseudo-Code à Compléter)</h2>
+            <p>Voici un extrait de pseudo-code qui décide si un choc doit être administré. Complétez la condition manquante.</p>
+            <div class="pseudo-code-block">
+                <pre>
+SI ( <input type="text" id="condition_choc" placeholder="Votre condition ici..."> ) ALORS
+    Afficher "Choc recommandé"
+    Charger_Condensateur()
+SINON
+    Afficher "Choc non recommandé"
+    Guider_RCP()
+FIN SI
+                </pre>
+            </div>
+            <div class="word-bank-code">
+                <strong>Termes possibles à utiliser (avec les guillemets)-(FV=Fibrillation Ventriculaire) :</strong> "Rythme = Normal", "Rythme = FV", "Batterie > 50%", "Patient_Adulte"
+            </div>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Boucle de RCP (Analyse de Blocs)</h2>
+            <p>Observez attentivement la séquence de blocs suivante qui représente une partie du guidage de la RCP. Que fait principalement cette boucle ?</p>
+            <div class="code-block-image-large">
+                 <img src="../images/b.png" alt="Séquence de blocs pour guider la RCP">
+                 <!--
+                    Image à créer :
+                    "quand RCP demandée"
+                        "répéter 5 fois"
+                            "dire [Commencez 30 compressions thoraciques]"
+                            "jouer son [métronome 100-120 bpm] pendant [18] secondes"
+                            "dire [Faites 2 insufflations]"
+                            "attendre [6] secondes"
+                        "dire [Nouvelle analyse dans quelques instants...]"
+                 -->
+            </div>
+            <form id="qcm-boucle-rcp">
+                <label><input type="radio" name="q2_rcp" value="a"> Elle vérifie si la batterie du DAE est suffisante pour continuer.</label><br>
+                <label><input type="radio" name="q2_rcp" value="b"> Elle analyse le rythme cardiaque du patient entre chaque compression.</label><br>
+                <label><input type="radio" name="q2_rcp" value="c" data-correct="true"> Elle guide l'utilisateur pour effectuer plusieurs cycles de 30 compressions et 2 insufflations.</label><br>
+                <label><input type="radio" name="q2_rcp" value="d"> Elle envoie un signal aux services de secours après chaque cycle.</label><br>
+            </form>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Modifier un Paramètre (Variable)</h2>
+            <p>Dans un programme du DAE, une variable <code>ENERGIE_CHOC_ADULTE</code> est initialement fixée à 150 Joules. Si des études montrent qu'un premier choc à 200 Joules est plus efficace, quelle instruction (en pseudo-code) modifierait correctement cette variable ?</p>
+            <form id="qcm-variable-dae">
+                <label><input type="radio" name="q3_variable" value="a"> SI ENERGIE_CHOC_ADULTE = 150 ALORS CHANGER POUR 200</label><br>
+                <label><input type="radio" name="q3_variable" value="b" data-correct="true"> METTRE ENERGIE_CHOC_ADULTE A 200</label><br>
+                <label><input type="radio" name="q3_variable" value="c"> CALCULER ENERGIE_CHOC_ADULTE + 50</label><br>
+                <label><input type="radio" name="q3_variable" value="d"> AFFICHER "L'énergie du choc est maintenant de 200J"</label><br>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Principes de Programmation pour le DAE</h2>
+            <p>Le microcontrôleur d'un DAE exécute un <strong>programme</strong>, qui est une traduction d'un <strong>algorithme</strong> (une suite logique d'instructions).</p>
+            <p><strong>Concepts Fondamentaux :</strong></p>
+            <ul>
+                <li><strong>Instructions :</strong> Des ordres simples que la machine peut comprendre (ex: "Allumer LED", "Jouer son", "Lire valeur capteur").</li>
+                <li><strong>Séquence :</strong> Les instructions sont généralement exécutées les unes après les autres, dans l'ordre où elles sont écrites.</li>
+                <li><strong>Variables :</strong> Ce sont des "boîtes" nommées qui stockent des informations pouvant changer pendant l'exécution du programme.
+                    <em>Exemples dans un DAE :</em> <code>etat_batterie</code> (pourcentage), <code>rythme_cardiaque_detecte</code> (type de rythme), <code>nombre_chocs_delivres</code> (entier).
+                    Une variable a un nom et une valeur. L'instruction <code>METTRE MaVariable A Valeur</code> (ou <code>MaVariable = Valeur</code>) change la valeur stockée.
+                </li>
+                <li><strong>Conditions (ou Structures Conditionnelles) :</strong> Elles permettent au programme de prendre des décisions et d'exécuter différentes instructions en fonction d'une situation. La forme la plus courante est "SI ... ALORS ... SINON ... FIN SI".
+                    <em>Ex: SI (Rythme_Cardiaque = "Fibrillation Ventriculaire") ALORS (Préparer_Choc) SINON (Guider_RCP_Uniquement).</em>
+                    Une condition évalue si une affirmation est VRAIE ou FAUSSE.
+                </li>
+                <li><strong>Boucles (ou Structures Répétitives) :</strong> Elles permettent de répéter un bloc d'instructions plusieurs fois.
+                    <ul>
+                        <li><strong>Répéter N fois :</strong> Exécute les instructions un nombre défini de fois (ex: guider 5 cycles de RCP).</li>
+                        <li><strong>Tant que (condition) :</strong> Exécute les instructions tant qu'une condition reste vraie (ex: TANT QUE (batterie > 10%) FAIRE clignoter_led_veille).</li>
+                    </ul>
+                    <em>Ex: La séquence "30 compressions, 2 insufflations" est répétée plusieurs fois dans une boucle pendant la RCP.</em>
+                </li>
+                <li><strong>Entrées / Sorties :</strong>
+                    <ul>
+                        <li><strong>Entrées :</strong> Informations que le programme reçoit du monde extérieur (ex: signal ECG via les électrodes, appui sur un bouton par l'utilisateur).</li>
+                        <li><strong>Sorties :</strong> Actions que le programme effectue sur le monde extérieur (ex: message vocal via haut-parleur, allumage d'une LED, délivrance du choc).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Pseudo-code :</strong> C'est une façon d'écrire un algorithme en langage naturel (proche du français), sans se soucier de la syntaxe exacte d'un langage de programmation. Cela permet de se concentrer sur la logique.</p>
+            <p><strong>Programmation par Blocs (Type Scratch) :</strong> Les instructions sont représentées par des blocs colorés qu'on assemble comme des LEGOs. C'est très visuel et aide à comprendre la structure (séquences, conditions, boucles).</p>
+            <p>Le programme d'un DAE est critique. Il doit être fiable, précis, et gérer toutes les situations possibles pour garantir la sécurité du patient et de l'utilisateur.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_9_tests_validation.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="../themes/module_11_materiaux.html">Module Suivant →</a> <!-- Dernier module, lien vers bilan -->
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_10.js"></script>
+</body>
+</html>

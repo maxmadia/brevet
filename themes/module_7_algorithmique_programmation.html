@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7: Algorithme & Programmation - DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/module7.css"> <!-- CSS Spécifique Module 7 -->
+</head>
+<body>
+    <header>
+        <h1>Module 7 : Algorithme & Programmation du DAE</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : La "Recette" du DAE</h2>
+            <p>Pour qu'un DAE fonctionne correctement et prenne les bonnes décisions (analyser, choquer ou non, guider), il suit une série d'instructions précises. Cette "recette" est un <strong>algorithme</strong>, qui est ensuite traduit en un <strong>programme</strong> que le microcontrôleur de l'appareil exécute.</p>
+
+<figure style="width: 500px; margin: auto; text-align: center;">
+  <img src="../images/algo.png" alt="Exemple d'algorigramme simple" style="width: 600px; height: auto;">
+  <!-- Source : Illustratif (scholikobohthima.gr) -->
+  <figcaption>
+    Un algorigramme (ou organigramme de programmation) représente visuellement les étapes et les décisions d'un algorithme.
+  </figcaption>
+</figure>
+
+            <p>Dans ce module, nous allons explorer la logique de fonctionnement du DAE à travers son algorithme et quelques concepts de programmation simples.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Ordonner les Étapes de l'Algorithme</h2>
+            <p>Un DAE suit une séquence logique d'actions. Remettez les étapes suivantes dans l'ordre correct du fonctionnement d'un DAE après son allumage et la pose des électrodes.</p>
+            <p><em>Faites glisser les étapes pour les ordonner de haut en bas (première étape en haut).</em></p>
+            <div id="algo-ranking-container">
+                <ul id="algo-step-list">
+                    <!-- Ordre initial mélangé -->
+                    <li draggable="true" data-step-id="analyse">Analyse du rythme cardiaque par l'appareil.</li>
+                    <li draggable="true" data-step-id="guide_rcp">Guidage de la Réanimation Cardio-Pulmonaire (RCP) si pas de choc.</li>
+                    <li draggable="true" data-step-id="choc">Délivrance du choc électrique (si recommandé et activé).</li>
+                    <li draggable="true" data-step-id="decision">Décision de l'appareil : choc recommandé ou non.</li>
+                    <li draggable="true" data-step-id="charge">Charge du condensateur (si choc recommandé).</li>
+                </ul>
+            </div>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Comprendre les Conditions</h2>
+            <p>L'algorithme du DAE utilise des conditions pour prendre des décisions. Complétez les phrases suivantes en choisissant la bonne option.</p>
+            <form id="conditions-form">
+                <div class="condition-statement">
+                    <p>1. <strong>SI</strong> le rythme cardiaque analysé est une "Fibrillation Ventriculaire" (FV), <strong>ALORS</strong> l'appareil...</p>
+                    <label><input type="radio" name="cond1" value="a"> ... demande immédiatement d'arrêter la RCP.</label><br>
+                    <label><input type="radio" name="cond1" value="b" data-correct="true"> ... recommandera un choc et commencera à charger son condensateur.</label><br>
+                    <label><input type="radio" name="cond1" value="c"> ... s'éteint automatiquement pour sécurité.</label>
+                </div>
+                <div class="condition-statement">
+                    <p>2. <strong>SI</strong> l'analyse du rythme cardiaque indique "Asystolie" (absence d'activité électrique), <strong>ALORS</strong> le DAE...</p>
+                    <label><input type="radio" name="cond2" value="a"> ... délivre quand même un choc pour essayer.</label><br>
+                    <label><input type="radio" name="cond2" value="b" data-correct="true"> ... ne recommandera PAS de choc et demandera de continuer/commencer la RCP.</label><br>
+                    <label><input type="radio" name="cond2" value="c"> ... demande de vérifier les électrodes.</label>
+                </div>
+                <div class="condition-statement">
+                    <p>3. <strong>SI</strong> un choc a été délivré, <strong>ALORS</strong> l'étape suivante immédiate demandée par le DAE est généralement de...</p>
+                    <label><input type="radio" name="cond3" value="a"> ... retirer les électrodes du patient.</label><br>
+                    <label><input type="radio" name="cond3" value="b"> ... attendre 2 minutes sans rien faire.</label><br>
+                    <label><input type="radio" name="cond3" value="c" data-correct="true"> ... reprendre immédiatement la RCP (massage cardiaque et insufflations).</label>
+                </div>
+            </form>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Variables et Programmation (Blocs)</h2>
+            <p>Imaginez un programme simple (type Scratch/Blocs) qui gère le guidage de la RCP. Une variable nommée <code>compteur_cycles_rcp</code> est utilisée.</p>
+            <p>Quelle action principale est réalisée par le bloc suivant dans l'algorithme de RCP ?</p>
+            <div class="code-block-image">
+                <!-- Image d'un bloc simple: ex "répéter 5 fois { faire 30 compressions; faire 2 insufflations; incrémenter compteur_cycles_rcp }" -->
+                <img src="../images/scratch_rcp_loop.png" alt="Bloc de programmation pour cycles RCP">
+                 <!-- Vous devrez créer cette image. Elle pourrait montrer :
+                      "répéter [5] fois"
+                          "dire [Faire 30 compressions thoraciques]"
+                          "attendre (jusqu'à fin compressions - implicite)"
+                          "dire [Faire 2 insufflations]"
+                          "attendre (jusqu'à fin insufflations - implicite)"
+                          "ajouter 1 à [compteur_cycles_rcp]"
+                 -->
+            </div>
+            <form id="qcm-code-form">
+                <label><input type="radio" name="q_code" value="a"> Mesurer la profondeur des compressions thoraciques.</label><br>
+                <label><input type="radio" name="q_code" value="b" data-correct="true"> Compter et guider un certain nombre de séquences de compressions/insufflations.</label><br>
+                <label><input type="radio" name="q_code" value="c"> Analyser le rythme cardiaque après chaque cycle de RCP.</label><br>
+                <label><input type="radio" name="q_code" value="d"> Charger le condensateur du défibrillateur.</label><br>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Algorithme et Programmation du DAE</h2>
+            <p>Un <strong>algorithme</strong> est une suite finie et non ambiguë d'opérations ou d'instructions permettant de résoudre un problème ou d'obtenir un résultat. C'est comme une recette de cuisine pour un ordinateur.</p>
+            <p>La <strong>programmation</strong> est l'action de traduire cet algorithme dans un langage compréhensible par une machine (ex: langage C, Python, ou langages graphiques par blocs comme Scratch).</p>
+
+            <p><strong>Algorithme Simplifié du DAE (après allumage et pose des électrodes) :</strong></p>
+            <ol>
+                <li><strong>ACQUÉRIR :</strong> Lire le signal ECG du patient.</li>
+                <li><strong>TRAITER :</strong>
+                    <ul>
+                        <li>Analyser le signal ECG.</li>
+                        <li><strong>Condition : SI</strong> le rythme est choquable (Fibrillation Ventriculaire ou Tachycardie Ventriculaire sans pouls) ?
+                            <ul>
+                                <li><strong>ALORS (OUI) :</strong>
+                                    <ol type="a">
+                                        <li>Annoncer "Choc recommandé".</li>
+                                        <li>Action : Charger le condensateur (Chaîne d'énergie).</li>
+                                        <li>Annoncer "Ne pas toucher le patient, délivrance du choc imminente".</li>
+                                        <li>Action : Attendre l'appui sur le bouton CHOC (pour semi-automatique) ou délivrer automatiquement (pour tout-automatique).</li>
+                                        <li>Action : Délivrer le choc (Chaîne d'énergie).</li>
+                                        <li>Annoncer "Choc délivré".</li>
+                                    </ol>
+                                </li>
+                                <li><strong>SINON (NON - rythme non choquable ou normal) :</strong>
+                                    <ol type="a">
+                                        <li>Annoncer "Choc non recommandé".</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>COMMUNIQUER / GUIDER :</strong>
+                    <ul>
+                        <li>Annoncer "Commencer/Reprendre la RCP".</li>
+                        <li>Action : Activer le métronome pour la RCP (ex: 30 compressions / 2 insufflations).</li>
+                        <li>Utilisation d'une <strong>boucle</strong> (répéter) pour plusieurs cycles de RCP (souvent 2 minutes).</li>
+                        <li>Après la période de RCP, retourner à l'étape 1 (ACQUÉRIR) pour une nouvelle analyse.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p><strong>Concepts Clés en Programmation (Illustrés par le DAE) :</strong></p>
+            <ul>
+                <li><strong>Séquence :</strong> Les instructions sont exécutées dans un ordre précis (allumer, analyser, charger, choquer, RCP).</li>
+                <li><strong>Variable :</strong> Une information stockée qui peut changer. Exemples :
+                    <ul>
+                        <li><code>rythme_choquable</code> (booléen : Vrai/Faux)</li>
+                        <li><code>energie_choc_joules</code> (numérique : ex: 150, 200)</li>
+                        <li><code>compteur_cycles_rcp</code> (numérique : 0, 1, 2...)</li>
+                    </ul>
+                </li>
+                <li><strong>Condition (ou Test) :</strong> Permet de prendre des décisions. La structure "SI... ALORS... SINON..." est fondamentale. Le DAE l'utilise pour décider si un choc est nécessaire.</li>
+                <li><strong>Boucle (ou Répétition) :</strong> Permet de répéter un ensemble d'instructions. Le guidage de la RCP (30:2) pendant 2 minutes est une boucle. On peut utiliser "RÉPÉTER N FOIS" ou "TANT QUE (condition)".</li>
+                <li><strong>Entrées/Sorties :</strong>
+                    <ul>
+                        <li>Entrées : Signal ECG, appui sur bouton Marche/Arrêt, appui sur bouton Choc.</li>
+                        <li>Sorties : Instructions vocales, affichage LED, énergie du choc.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Le programme du DAE est complexe et doit être extrêmement fiable car des vies en dépendent. Il intègre des sécurités et des vérifications constantes.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_6_diagnostic_depannage.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="module_8_projet_amelioration.html">Module Suivant →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_7.js"></script>
+</body>
+</html>

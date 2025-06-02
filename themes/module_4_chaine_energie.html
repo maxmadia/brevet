@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Chaîne d'Énergie - DAE</title>
+    <link rel="stylesheet" href="../css/module4.css">
+     <!-- Style spécifique si besoin, sinon dans style.css -->
+     <style>
+          /* Style pour glisser déposer sur schéma */
+          #chaine-energie-schema-container {
+              position: relative; /* Pour positionner les zones de dépôt */
+              max-width: 600px; /* Ajuster selon l'image */
+              margin: 20px auto;
+              user-select: none; /* Empêcher sélection texte image */
+          }
+          #chaine-energie-schema-container img {
+              display: block;
+              width: 100%;
+              height: auto;
+          }
+           .drop-zone-energie {
+               position: absolute;
+               border: 2px dashed #ff7f0e; /* Orange pour énergie */
+               background-color: rgba(255, 165, 0, 0.1); /* Orange très léger */
+               min-width: 80px; /* Taille minimale */
+               min-height: 40px;
+               border-radius: 5px;
+               display: flex;
+               align-items: center;
+               justify-content: center; /* Centrer le contenu (étiquette) */
+               padding: 5px;
+               transition: background-color 0.2s;
+               text-align: center; /* Centrer le texte si l'étiquette est dedans */
+               overflow: hidden; /* Pour que l'étiquette ne dépasse pas trop */
+           }
+            .drop-zone-energie.over {
+               background-color: rgba(255, 165, 0, 0.3);
+               border-style: solid;
+           }
+            .drop-zone-energie.correct-text-fallback { /* Style pour le texte de secours */
+                color: green;
+                font-weight: bold;
+            }
+
+
+            #etiquettes-energie-container {
+               margin-top: 20px;
+               padding: 15px;
+               border: 1px dashed #ccc;
+               background-color: #f1f3f5;
+               display: flex;
+               flex-wrap: wrap;
+               gap: 10px;
+               justify-content: center;
+               min-height: 60px; /* Hauteur minimale pour voir le conteneur */
+           }
+           .etiquette-energie {
+               background-color: #fff;
+               padding: 8px 12px;
+               border: 1px solid #b8b8b8;
+               border-radius: 4px;
+               cursor: grab;
+               box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+               white-space: nowrap; /* Empêche le texte de l'étiquette de passer à la ligne */
+           }
+            .etiquette-energie.dragging { opacity: 0.5; }
+
+            /* Style pour tableau forme énergie */
+            .energy-form-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+            }
+             .energy-form-table th, .energy-form-table td {
+                border: 1px solid #ddd;
+                padding: 8px 10px;
+                text-align: center;
+            }
+             .energy-form-table thead { background-color: #e9ecef; }
+             .energy-form-table select {
+                padding: 5px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+             }
+
+     </style>
+</head>
+<body>
+    <header>
+        <h1>Module 4 : La Chaîne d'Énergie du DAE</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : D'où vient l'énergie du choc ?</h2>
+            <p>Le défibrillateur doit stocker de l'énergie puis la transformer pour délivrer un choc électrique puissant au bon moment. Cette transformation et ce transfert d'énergie suivent un chemin précis : la <strong>chaîne d'énergie</strong>.</p>
+
+            <figure style="width: 800px; margin: 20px auto;">
+              <img src="https://ekladata.com/jGQTBEtrpiwfLw4VhQep54KQH9U.jpg"
+                   alt="Schéma générique chaîne d'énergie"
+                   style="width: 100%; max-width:800px; height: auto;">
+              <figcaption style="text-align: center; font-size: 0.9em; color: #555;">
+                Schéma de principe d'une chaîne d'énergie : Alimenter, Distribuer, Convertir, Transmettre (ou Agir).
+              </figcaption>
+            </figure>
+
+            <p>Nous allons identifier les composants du DAE qui réalisent ces différentes fonctions et suivre le parcours de l'énergie, de la batterie jusqu'au patient.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Les fonctions de la Chaîne d'Énergie (Glisser-Déposer)</h2>
+            <p>Faites glisser chaque fonction principale de la chaîne d'énergie dans la case correspondante du schéma simplifié du DAE.</p>
+             <div id="chaine-energie-schema-container">
+                 <!-- Image de fond représentant les blocs vides -->
+                 <img src="../images/chaine.png" alt="Schéma chaîne énergie DAE à compléter">
+                 <!-- Zones de dépôt positionnées sur l'image -->
+                 <div class="drop-zone-energie" id="drop-alim" data-correct-function="alimenter"></div>
+                 <div class="drop-zone-energie" id="drop-stock" data-correct-function="stocker"></div>
+                 <div class="drop-zone-energie" id="drop-distrib" data-correct-function="distribuer"></div>
+                 <div class="drop-zone-energie" id="drop-convert" data-correct-function="convertir"></div>
+                 <div class="drop-zone-energie" id="drop-deliver" data-correct-function="agir"></div> <!-- Agir/Délivrer -->
+            </div>
+            <div id="etiquettes-energie-container">
+                 <span class="etiquette-energie" draggable="true" data-function="distribuer">DISTRIBUER</span> 
+                 <span class="etiquette-energie" draggable="true" data-function="stocker">STOCKER</span>
+                 <span class="etiquette-energie" draggable="true" data-function="convertir">CONVERTIR</span>
+                 <span class="etiquette-energie" draggable="true" data-function="agir">TRANSMETTRE</span>
+                 <span class="etiquette-energie" draggable="true" data-function="alimenter">ALIMENTER</span>
+            </div>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <button id="next-ex2-btn" class="hidden" style="margin-left: 10px;">Passer à l'exercice 2</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+             <h2>Exercice 2 : Composants et Fonctions (Associer)</h2>
+             <p>Associez chaque composant clé du DAE à sa fonction principale dans la chaîne d'énergie.</p>
+             <div id="matching-comp-container">
+                 <div class="comp-list" id="comp-list">
+                      <p>Composants :</p>
+                     <div class="draggable-comp" draggable="true" id="comp3">Convertisseur de tension</div>
+                     <div class="draggable-comp" draggable="true" id="comp4">Électrodes</div>
+                     <div class="draggable-comp" draggable="true" id="comp1">Batterie</div>
+                     <div class="draggable-comp" draggable="true" id="comp2">Condensateur Haute Tension</div>
+                 </div>
+                 <div class="comp-dropzones">
+                     <div class="dropzone-comp" id="comp-func-alim" data-correct-comp="comp1">
+                          <p><strong>Fonction :</strong> Fournir l'énergie initiale (Alimenter)</p>
+                     </div>
+                      <div class="dropzone-comp" id="comp-func-stock" data-correct-comp="comp2">
+                          <p><strong>Fonction :</strong> Stocker l'énergie électrique à haute tension avant le choc</p>
+                     </div>
+                      <div class="dropzone-comp" id="comp-func-convert" data-correct-comp="comp3">
+                          <p><strong>Fonction :</strong> Élever la tension de la batterie pour charger le stockeur</p>
+                      </div>
+                      <div class="dropzone-comp" id="comp-func-deliver" data-correct-comp="comp4">
+                           <p><strong>Fonction :</strong> Transmettre l'impulsion électrique au patient (Agir)</p>
+                      </div>
+                 </div>
+             </div>
+             <button id="validate-ex2">Valider Exercice 2</button>
+             <div id="feedback-ex2" class="feedback"></div>
+         </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Formes et Conversions d'Énergie (Tableau)</h2>
+            <p>Pour chaque étape clé, sélectionnez la forme d'énergie principale en entrée et en sortie.</p>
+            <form id="form-ex3">
+                <table class="energy-form-table">
+                    <thead>
+                        <tr>
+                            <th>Composant / Étape</th>
+                            <th>Énergie d'Entrée</th>
+                            <th>Énergie de Sortie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Batterie</strong> (lors de l'usage)</td>
+                            <td><em>(Energie chimique)</em></td>
+                            <td>
+                                <select name="q3_bat_out" required>
+                                    <option value="">Choisir...</option>
+                                    <option value="chimique">Chimique</option>
+                                    <option value="electrique_bt" data-correct="true">Électrique (Basse Tension)</option>
+                                    <option value="thermique">Thermique</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                             <td><strong>Convertisseur DC/DC</strong></td>
+                             <td>
+                                 <select name="q3_conv_in" required>
+                                     <option value="">Choisir...</option>
+                                     <option value="electrique_bt" data-correct="true">Électrique (Basse Tension)</option>
+                                     <option value="mecanique">Mécanique</option>
+                                     <option value="electrique_ht">Électrique (Haute Tension)</option>
+                                 </select>
+                             </td>
+                             <td>
+                                  <select name="q3_conv_out" required>
+                                     <option value="">Choisir...</option>
+                                     <option value="electrique_bt">Électrique (Basse Tension)</option>
+                                     <option value="electrique_ht" data-correct="true">Électrique (Haute Tension)</option>
+                                     <option value="lumineuse">Lumineuse</option>
+                                 </select>
+                             </td>
+                        </tr>
+                        <tr>
+                             <td><strong>Condensateur</strong> (pendant la décharge)</td>
+                             <td>
+                                  <select name="q3_cond_in" required>
+                                     <option value="">Choisir...</option>
+                                     <option value="chimique">Chimique</option>
+                                     <option value="electrique_ht" data-correct="true">Électrique (Haute Tension stockée)</option>
+                                     <option value="potentielle">Potentielle</option>
+                                 </select>
+                             </td>
+                             <td>
+                                  <select name="q3_cond_out" required>
+                                     <option value="">Choisir...</option>
+                                      <option value="electrique_impulsion" data-correct="true">Électrique (Impulsion de choc)</option>
+                                     <option value="sonore">Sonore</option>
+                                     <option value="thermique">Thermique</option>
+                                 </select>
+                             </td>
+                        </tr>
+                         <tr>
+                             <td><strong>Électrodes + Patient</strong> (lors du choc)</td>
+                             <td>
+                                  <select name="q3_elec_in" required>
+                                      <option value="">Choisir...</option>
+                                      <option value="electrique_bt">Électrique (Basse Tension)</option>
+                                      <option value="electrique_impulsion" data-correct="true">Électrique (Impulsion de choc)</option>
+                                      <option value="cinetique">Cinétique</option>
+                                  </select>
+                             </td>
+                              <td>
+                                   <select name="q3_elec_out" required>
+                                      <option value="">Choisir...</option>
+                                      <option value="electrique_detectee">Électrique (Rythme modifié détecté)</option>
+                                       <option value="thermique_effet" data-correct="true">Thermique (principal effet secondaire)</option>
+                                       <option value="lumineuse_flash">Lumineuse (Flash)</option>
+                                  </select>
+                              </td>
+                         </tr>
+                    </tbody>
+                </table>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Chaîne d'Énergie du DAE</h2>
+            <p>La chaîne d'énergie décrit le parcours et les transformations de l'énergie nécessaire au fonctionnement d'un objet technique, de la source jusqu'à l'action finale.</p>
+            <p>Les fonctions principales d'une chaîne d'énergie sont :</p>
+            <ul>
+                <li><strong>ALIMENTER :</strong> Fournir l'énergie nécessaire au système (souvent depuis une source externe ou un réservoir interne).</li>
+                <li><strong>DISTRIBUER :</strong> Gérer le flux d'énergie, l'autoriser ou l'interrompre (souvent sur ordre de la chaîne d'information). <em>Ex: Interrupteur, relais. Dans le DAE, c'est le commutateur haute tension qui déclenche le choc.</em></li>
+                <li><strong>CONVERTIR :</strong> Changer la nature ou les caractéristiques de l'énergie (ex: électrique en mécanique, chimique en électrique, basse tension en haute tension).</li>
+                <li><strong>TRANSMETTRE / AGIR :</strong> Transporter l'énergie jusqu'à l'effecteur ou réaliser l'action finale sur la matière d'œuvre.</li>
+                <li><strong>STOCKER :</strong> Emmagasiner de l'énergie pour une utilisation ultérieure (ex: batterie) ou temporairement (ex: condensateur).</li>
+            </ul>
+            <p><strong>Chaîne d'Énergie du DAE (simplifiée pour le choc) :</strong></p>
+            <ol>
+                <li><strong>ALIMENTER :</strong> La <strong>Batterie</strong> fournit l'énergie initiale sous forme <strong>Chimique</strong> puis la convertit en <strong>Électrique Basse Tension</strong>.</li>
+                <li><strong>CONVERTIR :</strong> Le <strong>Convertisseur DC/DC</strong> élève la tension. Entrée: <strong>Électrique Basse Tension</strong>, Sortie: <strong>Électrique Haute Tension</strong>.</li>
+                <li><strong>STOCKER :</strong> Le <strong>Condensateur</strong> accumule l'énergie <strong>Électrique Haute Tension</strong>.</li>
+                <li><strong>DISTRIBUER / AGIR :</strong> Sur ordre, un commutateur libère l'énergie stockée. Les <strong>Électrodes</strong> transmettent l'<strong>Impulsion Électrique</strong> au patient. L'effet principal sur le patient est une action sur les cellules cardiaques, avec un dégagement <strong>Thermique</strong> secondaire.</li>
+            </ol>
+             <p><strong>Formes d'Énergie rencontrées :</strong></p>
+             <ul>
+                 <li><strong>Chimique :</strong> Stockée dans la batterie.</li>
+                 <li><strong>Électrique :</strong> Sous différentes tensions (basse sortie batterie, haute dans le condensateur, impulsion du choc).</li>
+                 <li><strong>Thermique :</strong> Effet Joule lors du passage du courant dans le patient (effet secondaire).</li>
+                 <li><em>Note : D'autres conversions existent pour l'interface (Électrique -> Sonore, Électrique -> Lumineuse) mais ne font pas partie de la chaîne principale du choc.</em></li>
+             </ul>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_3_choix_performances.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="module_5_chaine_information.html">Module Suivant →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_4.js"></script>
+</body>
+</html>

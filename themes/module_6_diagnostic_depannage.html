@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6: Diagnostic & Dépannage - DAE</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/module6.css"> <!-- CSS Spécifique Module 6 -->
+</head>
+<body>
+    <header>
+        <h1>Module 6 : Diagnostic & Dépannage du DAE</h1>
+    </header>
+
+    <main>
+        <!-- SECTION INTRODUCTION -->
+        <section id="introduction">
+            <h2>Introduction : Que faire si le DAE signale un problème ?</h2>
+            <p>Les Défibrillateurs Automatisés Externes sont conçus pour être fiables, mais comme tout appareil électronique, ils peuvent parfois rencontrer des problèmes ou nécessiter une attention particulière (batterie faible, électrodes périmées, auto-test échoué).</p>
+            <figure class="intro-image-single">
+                  <img src="../images/indicateur.png" alt="Indicateurs d'état d'un DAE">
+
+                 <!-- Source : DefibStore.fr (Illustratif) -->
+                 <figcaption>Un DAE possède souvent des indicateurs lumineux (vert = OK, rouge/orange = problème) et des messages vocaux pour signaler son état de fonctionnement ou un besoin de maintenance.</figcaption>
+            </figure>
+            <p>Ce module va explorer comment identifier certains dysfonctionnements courants grâce aux signaux du DAE et quelles actions simples un utilisateur peut entreprendre.</p>
+            <button id="start-exercises">Commencer les exercices</button>
+        </section>
+        <!-- FIN SECTION INTRODUCTION -->
+
+        <section id="exercise-1" class="exercise-section hidden">
+            <h2>Exercice 1 : Interpréter les Signaux du DAE (QCM)</h2>
+            <p>Un DAE émet un bip sonore régulier et son voyant d'état clignote en orange/rouge. Que cela signifie-t-il le plus probablement ?</p>
+            <form id="qcm-diag-1">
+                <label><input type="radio" name="q1_diag" value="a"> L'appareil est en train d'analyser un patient.</label><br>
+                <label><input type="radio" name="q1_diag" value="b" data-correct="true"> L'appareil signale un problème (ex: batterie faible, électrodes à vérifier, besoin de maintenance).</label><br>
+                <label><input type="radio" name="q1_diag" value="c"> L'appareil est prêt à délivrer un choc.</label><br>
+                <label><input type="radio" name="q1_diag" value="d"> L'appareil est en mode veille et fonctionne normalement.</label><br>
+            </form>
+            <button id="validate-ex1">Valider Exercice 1</button>
+            <div id="feedback-ex1" class="feedback"></div>
+        </section>
+
+        <section id="exercise-2" class="exercise-section hidden">
+            <h2>Exercice 2 : Actions Correctives Simples (Associer)</h2>
+            <p>Associez chaque problème signalé par le DAE à l'action corrective la plus appropriée pour un utilisateur non-spécialiste.</p>
+            <div id="matching-diag-container">
+                <div class="problem-list-diag">
+                    <p>Problèmes Signalés :</p>
+                    <!-- Ordre mélangé -->
+                    <div class="draggable-diag" draggable="true" id="prob1">Message vocal : "Batterie faible, remplacez la batterie."</div>
+                    <div class="draggable-diag" draggable="true" id="prob2">Message vocal : "Vérifiez les électrodes." + Voyant électrodes clignote.</div>
+                    <div class="draggable-diag" draggable="true" id="prob3">DAE ne s'allume pas du tout.</div>
+                    <div class="draggable-diag" draggable="true" id="prob4">Auto-test quotidien échoué (voyant rouge fixe, bip d'erreur).</div>
+                </div>
+                <div class="solution-dropzones-diag">
+                    <div class="dropzone-diag" id="sol1" data-correct-problem="prob1">
+                        <p><strong>Action :</strong> Commander et installer une nouvelle batterie compatible.</p>
+                    </div>
+                    <div class="dropzone-diag" id="sol2" data-correct-problem="prob2">
+                        <p><strong>Action :</strong> S'assurer que le sachet des électrodes n'est pas ouvert/périmé et que le connecteur est bien branché au DAE.</p>
+                    </div>
+                    <div class="dropzone-diag" id="sol3" data-correct-problem="prob3">
+                        <p><strong>Action :</strong> Vérifier que la batterie est présente et correctement insérée. Si oui, contacter le service de maintenance.</p>
+                    </div>
+                    <div class="dropzone-diag" id="sol4" data-correct-problem="prob4">
+                        <p><strong>Action :</strong> Contacter immédiatement le service de maintenance ou le fournisseur pour un diagnostic.</p>
+                    </div>
+                </div>
+            </div>
+            <button id="validate-ex2">Valider Exercice 2</button>
+            <div id="feedback-ex2" class="feedback"></div>
+        </section>
+
+        <section id="exercise-3" class="exercise-section hidden">
+            <h2>Exercice 3 : Prévention et Maintenance (Vrai/Faux)</h2>
+            <p>Indiquez si les affirmations suivantes concernant la maintenance préventive d'un DAE sont vraies ou fausses.</p>
+            <form id="tf-diag-form">
+                <div class="tf-statement">
+                    <p>1. Il faut tester un DAE en délivrant un choc sur une personne saine chaque mois pour vérifier son fonctionnement.</p>
+                    <label><input type="radio" name="q3_tf1" value="vrai"> Vrai</label>
+                    <label><input type="radio" name="q3_tf1" value="faux" data-correct="true"> Faux</label>
+                </div>
+                <div class="tf-statement">
+                    <p>2. Les électrodes d'un DAE ont une date de péremption et doivent être remplacées même si elles n'ont jamais été utilisées.</p>
+                    <label><input type="radio" name="q3_tf2" value="vrai" data-correct="true"> Vrai</label>
+                    <label><input type="radio" name="q3_tf2" value="faux"> Faux</label>
+                </div>
+                <div class="tf-statement">
+                    <p>3. La plupart des DAE effectuent des auto-tests réguliers (quotidiens, hebdomadaires) pour vérifier leur état.</p>
+                    <label><input type="radio" name="q3_tf3" value="vrai" data-correct="true"> Vrai</label>
+                    <label><input type="radio" name="q3_tf3" value="faux"> Faux</label>
+                </div>
+                 <div class="tf-statement">
+                    <p>4. Si le voyant du DAE est vert, aucune vérification n'est nécessaire avant plusieurs années.</p>
+                    <label><input type="radio" name="q3_tf4" value="vrai"> Vrai</label>
+                    <label><input type="radio" name="q3_tf4" value="faux" data-correct="true"> Faux</label>
+                </div>
+            </form>
+            <button id="validate-ex3">Valider Exercice 3</button>
+            <div id="feedback-ex3" class="feedback"></div>
+        </section>
+
+        <div id="module-results" class="hidden">
+             <h2>Résultats du Module</h2>
+             <p>Votre score pour ce module est de : <span id="module-score">0</span> / <span id="module-max-score">0</span></p>
+             <button id="show-lesson-btn">Voir la leçon</button>
+        </div>
+
+        <article id="micro-cours" class="hidden">
+            <h2>Leçon : Diagnostic et Dépannage Simplifié du DAE</h2>
+            <p>Un DAE est un appareil médical conçu pour sauver des vies, mais il nécessite une surveillance et une maintenance minimales pour garantir son bon fonctionnement en cas d'urgence.</p>
+            <p><strong>Auto-Diagnostic :</strong></p>
+            <p>La plupart des DAE modernes sont équipés de systèmes d'<strong>auto-tests</strong> automatiques. Ils vérifient régulièrement (souvent quotidiennement ou hebdomadairement) :</p>
+            <ul>
+                <li>L'état de la batterie (niveau de charge).</li>
+                <li>La fonctionnalité des circuits internes.</li>
+                <li>La connexion et parfois la date de péremption des électrodes (pour les modèles plus avancés).</li>
+            </ul>
+            <p>L'appareil signale son état via :</p>
+            <ul>
+                <li><strong>Indicateurs lumineux :</strong> Un voyant vert indique généralement que l'appareil est opérationnel. Un voyant orange ou rouge, ou un voyant vert qui clignote, signale un problème.</li>
+                <li><strong>Signaux sonores :</strong> Des bips réguliers ou un message vocal peuvent indiquer un dysfonctionnement.</li>
+            </ul>
+
+            <p><strong>Problèmes Courants et Actions Utilisateur :</strong></p>
+            <ol>
+                <li><strong>Batterie Faible/Vide :</strong>
+                    <ul>
+                        <li><strong>Signal :</strong> Voyant rouge/orange, message vocal "Batterie faible" ou "Remplacer batterie", bips.</li>
+                        <li><strong>Action :</strong> Remplacer la batterie par une neuve compatible, en respectant la date de péremption de la nouvelle batterie. Noter la date de remplacement.</li>
+                    </ul>
+                </li>
+                <li><strong>Problème d'Électrodes :</strong>
+                    <ul>
+                        <li><strong>Signal :</strong> Message vocal "Vérifier électrodes", "Connecter électrodes", voyant spécifique clignotant.</li>
+                        <li><strong>Action :</strong>
+                            <ul>
+                                <li>Vérifier que le sachet des électrodes n'est pas ouvert ou endommagé.</li>
+                                <li>Vérifier la <strong>date de péremption</strong> des électrodes (indiquée sur le sachet). Si périmées, les remplacer.</li>
+                                <li>S'assurer que le connecteur des électrodes est correctement branché au DAE.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>L'appareil ne s'allume pas :</strong>
+                    <ul>
+                        <li><strong>Action :</strong>
+                            <ul>
+                                <li>Vérifier que la batterie est présente et correctement insérée.</li>
+                                <li>Essayer avec une batterie neuve si disponible et si la date de la batterie actuelle est suspecte.</li>
+                                <li>Si le problème persiste, l'appareil est défectueux : contacter immédiatement le fournisseur ou la maintenance.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Échec de l'auto-test / Voyant rouge fixe :</strong>
+                    <ul>
+                        <li><strong>Signal :</strong> Voyant rouge permanent, message d'erreur, bips anormaux.</li>
+                        <li><strong>Action :</strong> Mettre l'appareil hors service et contacter <strong>immédiatement</strong> le service de maintenance ou le fournisseur. Ne pas tenter de l'utiliser.</li>
+                    </ul>
+                </li>
+            </ol>
+            <p><strong>Maintenance Préventive :</strong></p>
+            <ul>
+                <li><strong>Vérification visuelle régulière :</strong> S'assurer que le voyant d'état est vert.</li>
+                <li><strong>Respecter les dates de péremption :</strong> Les batteries et les électrodes ont une durée de vie limitée et doivent être remplacées avant leur date d'expiration, même si le DAE n'a jamais été utilisé.</li>
+                <li><strong>Suivre les recommandations du fabricant :</strong> Chaque modèle de DAE a un manuel d'utilisation qui précise les opérations de maintenance.</li>
+                <li><strong>Ne jamais tester un DAE en délivrant un choc sur une personne saine</strong> ou sur soi-même. Les auto-tests sont suffisants.</li>
+            </ul>
+            <p>En cas de doute, il est toujours préférable de contacter le fournisseur ou un service de maintenance qualifié.</p>
+        </article>
+
+        <nav class="module-nav">
+             <a href="module_5_chaine_information.html">← Module Précédent</a>
+            <a href="../index.html">Retour à l'accueil</a>
+             <a href="module_7_algorithmique_programmation.html">Module Suivant →</a> <!-- Lien vers module suivant (à créer) -->
+        </nav>
+    </main>
+
+    <footer>
+        <p>Entraînement Brevet DNB - Technologie - Le Défibrillateur Cardiaque</p>
+    </footer>
+
+    <script src="../js/notation.js"></script>
+    <script src="../js/module_6.js"></script>
+</body>
+</html>
